@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="uz"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Maleton boshqaruv paneli</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#0f3d30;--paper:#f4f3ec;--card:#fffffb;--line:#dde3da;--text:#1c2a25;--muted:#5f6d67;--gold:#b8955a;--ok:#2f6b47;--warn:#9a6a12;--bad:#9b3426}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font:14.5px/1.5 "Geist",system-ui,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+header{background:var(--ink);color:#fff;padding:14px max(16px,calc((100% - 1180px)/2));display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+header b{font-size:17px;font-weight:600}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{background:none;border:0;color:#cfe0d8;padding:8px 14px;border-radius:999px}
+nav button[aria-pressed="true"]{background:#fff;color:var(--ink);font-weight:600}
+.sp{flex:1}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 80px}
+h1{font-size:28px;font-weight:500;letter-spacing:-.03em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat b{display:block;font-size:24px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.pill{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600}
+.pill.yangi{background:#fdf1d6;color:var(--warn)}.pill.tasdiqlandi{background:#dcefe3;color:var(--ok)}.pill.yetkazildi{background:#e6ebe7;color:var(--muted)}.pill.bekor{background:#f6dfda;color:var(--bad)}
+.muted{color:var(--muted);font-size:13px}
+ul.items{margin:10px 0;padding-left:18px}
+.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;font-weight:500}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.danger{background:transparent;border-color:var(--bad);color:var(--bad)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filters button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+input,select,textarea{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 11px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:500}
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl img{width:40px;height:48px;object-fit:cover;border-radius:5px;background:#e3eae3;display:block}
+.scroll{overflow-x:auto}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form .wide{grid-column:1/-1}
+.prices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.login{max-width:360px;margin:12vh auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.err{color:var(--bad);font-size:13px;min-height:18px}
+.note{background:#fdf1d6;border-radius:8px;padding:10px 14px;color:var(--warn);font-size:13.5px;margin-bottom:16px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+[hidden]{display:none!important}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.form{grid-template-columns:1fr}.prices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body>
+
+<form class="login" id="login" hidden>
+  <h1>Maleton paneli</h1>
+  <label>Parol<input id="pw" type="password" autocomplete="current-password" required></label>
+  <div class="err" id="loginErr"></div>
+  <button class="btn" type="submit">Kirish</button>
+</form>
+
+<div id="app" hidden>
+  <header><b>Maleton · boshqaruv</b>
+    <nav id="tabs"></nav><span class="sp"></span>
+    <a href="/" target="_blank" style="color:#cfe0d8">Saytni ochish</a>
+    <button class="btn ghost" id="logout" style="color:#fff;border-color:#3b6b5c">Chiqish</button>
+  </header>
+  <main id="view"></main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + " so'm";
+const date = t => new Date(t).toLocaleString('uz-UZ', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'});
+const STATUS = {yangi:'Yangi', tasdiqlandi:'Tasdiqlandi', yetkazildi:'Yetkazildi', bekor:'Bekor qilindi'};
+const TABS = [['orders','Buyurtmalar'],['customers','Mijozlar'],['products','Mahsulotlar'],['settings','Sozlamalar']];
+let S = null, tab = 'orders', oFilter = 'ochiq', pKind = 'klassika', pQuery = '', editing = null;
+let tt; const toast = m => { const t=$('#toast'); t.textContent=m; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),2200); };
+
+async function api(path, body) {
+  const r = await fetch('/api/admin/' + path, body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {});
+  if (r.status === 401 && path !== 'login') { showLogin(); throw new Error('auth'); }
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || 'Xato yuz berdi');
+  return j;
+}
+function showLogin(){ $('#app').hidden = true; $('#login').hidden = false; $('#pw').focus(); }
+async function load(){ S = await api('state'); $('#login').hidden = true; $('#app').hidden = false; draw(); }
+$('#login').addEventListener('submit', async e => { e.preventDefault(); $('#loginErr').textContent = '';
+  try { await api('login', {password: $('#pw').value}); $('#pw').value = ''; await load(); } catch (err) { $('#loginErr').textContent = err.message; } });
+$('#logout').onclick = async () => { await api('logout', {}); showLogin(); };
+
+function draw(){
+  const fresh = S.orders.filter(o => o.status === 'yangi').length;
+  $('#tabs').innerHTML = TABS.map(([k,l]) => `<button type="button" data-tab="${k}" aria-pressed="${tab===k}">${l}${k==='orders'&&fresh?` (${fresh})`:''}</button>`).join('');
+  ({orders:drawOrders, customers:drawCustomers, products:drawProducts, settings:drawSettings})[tab]();
+}
+$('#tabs').onclick = e => { const b = e.target.closest('[data-tab]'); if (b) { tab = b.dataset.tab; editing = null; draw(); } };
+
+// ---- buyurtmalar
+function drawOrders(){
+  const done = S.orders.filter(o => o.status !== 'bekor');
+  const today = new Date().toDateString();
+  const list = S.orders.filter(o => oFilter==='hammasi' || (oFilter==='ochiq' ? (o.status==='yangi'||o.status==='tasdiqlandi') : o.status===oFilter)).slice().reverse();
+  $('#view').innerHTML = `<h1>Buyurtmalar</h1><p class="sub">Yangi buyurtma kelganda Telegramga ham xabar boradi.</p>
+    ${S.bot.on && S.bot.chat ? '' : `<div class="note">${S.bot.on ? "Bot ishlayapti, lekin buyurtmalar keladigan chat ko'rsatilmagan: botga /id deb yozing va chiqqan raqamni server/.env fayliga ADMIN_CHAT_ID qilib yozing." : "Telegram bot ulanmagan: server/.env fayliga BOT_TOKEN yozing. Hozir buyurtmalar faqat shu panelda ko'rinadi."}</div>`}
+    <div class="stats">
+      <div class="stat"><b>${S.orders.filter(o=>o.status==='yangi').length}</b><span>Yangi buyurtma</span></div>
+      <div class="stat"><b>${S.orders.filter(o=>new Date(o.ts).toDateString()===today).length}</b><span>Bugun</span></div>
+      <div class="stat"><b>${done.length}</b><span>Jami (bekor qilinmagan)</span></div>
+      <div class="stat"><b>${fmt(done.reduce((a,o)=>a+o.total,0)).replace(" so'm",'')}</b><span>Savdo, so'm</span></div>
+    </div>
+    <div class="filters">${[['ochiq','Ochiq'],['yangi','Yangi'],['tasdiqlandi','Tasdiqlangan'],['yetkazildi','Yetkazilgan'],['bekor','Bekor qilingan'],['hammasi','Hammasi']].map(([k,l])=>`<button type="button" data-of="${k}" aria-pressed="${oFilter===k}">${l}</button>`).join('')}</div>
+    ${list.length ? list.map(o => `<div class="card">
+      <div class="row"><div><b>${esc(o.no)}</b> · <span class="pill ${o.status}">${STATUS[o.status]}</span><div class="muted">${date(o.ts)}</div></div><b style="font-size:17px">${fmt(o.total)}</b></div>
+      <div style="margin-top:8px"><b>${esc(o.name)}</b> · <a href="tel:${esc(o.phone)}">${esc(o.phone)}</a>${o.tg&&o.tg.username?` · <a href="https://t.me/${esc(o.tg.username)}" target="_blank">@${esc(o.tg.username)}</a>`:''}</div>
+      <ul class="items">${o.items.map(i=>`<li>${esc(i.title)} <span class="muted">(${esc(i.detail)})</span> × ${i.qty} = ${fmt(i.price*i.qty)}</li>`).join('')}</ul>
+      <div class="muted">${esc(o.ship.label)}${o.ship.region?' ('+esc(o.ship.region)+')':''}${o.ship.addr?', '+esc(o.ship.addr):''} · yetkazish ${o.ship.price?fmt(o.ship.price):'bepul'}</div>
+      ${o.note?`<div class="muted">Izoh: ${esc(o.note)}</div>`:''}
+      <div class="acts">
+        ${o.status==='yangi'?`<button class="btn" data-st="${o.no}:tasdiqlandi">Tasdiqlash</button>`:''}
+        ${o.status==='tasdiqlandi'?`<button class="btn" data-st="${o.no}:yetkazildi">Yetkazildi</button>`:''}
+        ${o.status==='yangi'||o.status==='tasdiqlandi'?`<button class="btn danger" data-st="${o.no}:bekor">Bekor qilish</button>`:''}
+        ${o.status==='bekor'||o.status==='yetkazildi'?`<button class="btn ghost" data-st="${o.no}:yangi">Qayta ochish</button>`:''}
+      </div></div>`).join('') : `<div class="card muted">Bu bo'limda buyurtma yo'q.</div>`}`;
+}
+
+// ---- mijozlar (buyurtmalardan yig'iladi)
+function drawCustomers(){
+  const map = new Map();
+  for (const o of S.orders) { const c = map.get(o.phone) || {phone:o.phone, name:o.name, orders:[], total:0}; c.name = o.name; c.orders.push(o); if (o.status!=='bekor') c.total += o.total; map.set(o.phone, c); }
+  const list = [...map.values()].sort((a,b) => b.total - a.total);
+  $('#view').innerHTML = `<h1>Mijozlar</h1><p class="sub">${list.length} ta mijoz. Har birining xarid tarixi buyurtmalardan avtomatik yig'iladi.</p>
+    ${list.length ? `<div class="scroll"><table class="tbl"><tr><th>Mijoz</th><th>Telefon</th><th>Buyurtmalar</th><th>Jami xarid</th><th>Oxirgi buyurtma</th><th>Nimalar olgan</th></tr>
+    ${list.map(c => { const last = c.orders[c.orders.length-1]; const names = [...new Set(c.orders.flatMap(o=>o.items.map(i=>i.title)))];
+      return `<tr><td><b>${esc(c.name)}</b></td><td class="n"><a href="tel:${esc(c.phone)}">${esc(c.phone)}</a></td><td class="n">${c.orders.length}</td><td class="n">${fmt(c.total)}</td><td class="n">${date(last.ts)}</td><td class="muted">${esc(names.slice(0,5).join(', '))}${names.length>5?' va yana '+(names.length-5):''}</td></tr>`; }).join('')}</table></div>` : `<div class="card muted">Hali mijozlar yo'q. Birinchi buyurtmadan keyin shu yerda ko'rinadi.</div>`}`;
+}
+
+// ---- mahsulotlar
+function drawProducts(){
+  if (editing) return drawEditor();
+  const list = S[pKind].filter(p => !pQuery || (p.name+' '+(p.brand||'')).toLowerCase().includes(pQuery.toLowerCase()));
+  $('#view').innerHTML = `<h1>Mahsulotlar</h1><p class="sub">Narx yoki tavsifni o'zgartirsangiz, saytda darhol yangilanadi.</p>
+    <div class="row" style="margin-bottom:14px;align-items:center">
+      <div class="filters" style="margin:0"><button type="button" data-pk="klassika" aria-pressed="${pKind==='klassika'}">Klassika (${S.klassika.length})</button><button type="button" data-pk="originals" aria-pressed="${pKind==='originals'}">Mualliflik (${S.originals.length})</button></div>
+      <div style="display:flex;gap:8px;flex:1;max-width:520px"><input id="pq" type="search" placeholder="Nomi yoki brend bo'yicha qidirish" value="${esc(pQuery)}">${pKind==='klassika'?'<button class="btn" id="newP" style="white-space:nowrap">Yangi atir</button>':''}</div>
+    </div>
+    <div class="scroll"><table class="tbl"><tr><th></th><th>Nomi</th><th>10 ml</th><th>20 ml</th><th>30 ml</th><th>50 ml</th><th>100 ml</th><th>Holat</th><th></th></tr>
+    ${list.map(p => `<tr><td><img src="/${esc(p.img || 'img/originals/'+p.id+'.webp')}" alt="" loading="lazy"></td><td><b>${esc(p.name)}</b><div class="muted">${esc(p.brand||'Maleton')}</div></td>
+      ${['10','20','30','50','100'].map(ml=>`<td class="n">${p.prices[ml]?fmt(p.prices[ml]).replace(" so'm",''):'—'}</td>`).join('')}
+      <td>${p.hidden?'<span class="pill bekor">Yashirin</span>':'<span class="pill tasdiqlandi">Sotuvda</span>'}</td><td><button class="btn ghost" data-edit="${esc(p.id)}">Tahrirlash</button></td></tr>`).join('')}</table></div>`;
+}
+function drawEditor(){
+  const p = editing.p, isNew = !p.id;
+  $('#view').innerHTML = `<h1>${isNew ? 'Yangi atir' : esc(p.name)}</h1><p class="sub">${pKind==='klassika'?'Klassika':'Mualliflik kolleksiyasi'}</p>
+    <form class="card form" id="pf">
+      <label>Nomi<input name="name" value="${esc(p.name)}" required></label>
+      ${pKind==='klassika'?`<label>Brend (ilhom manbai)<input name="brand" value="${esc(p.brand)}"></label>`:'<span></span>'}
+      <label>Kim uchun<select name="gender">${[['uniseks','Uniseks'],['erkak','Erkaklar'],['ayol','Ayollar']].map(([v,l])=>`<option value="${v}"${p.gender===v?' selected':''}>${l}</option>`).join('')}</select></label>
+      <label>Davlat<input name="country" value="${esc(p.country||'')}"></label>
+      <label class="wide">Notalar (vergul bilan)<input name="notes" value="${esc((p.notes||[]).join(', '))}"></label>
+      <label class="wide">Tavsif<textarea name="desc" rows="4">${esc(p.desc||'')}</textarea></label>
+      <div class="wide"><div style="font-size:13px;font-weight:500;margin-bottom:4px">Narxlar, so'm (bo'sh qoldirilgan hajm sotilmaydi)</div>
+        <div class="prices">${['10','20','30','50','100'].map(ml=>`<label>${ml} ml<input name="p${ml}" type="number" min="0" step="1000" inputmode="numeric" value="${p.prices&&p.prices[ml]||''}"></label>`).join('')}</div></div>
+      ${pKind==='klassika'?`<label class="wide">Rasm ${isNew?'(majburiy)':"(o'zgartirish uchun yangisini tanlang)"}<input name="image" type="file" accept="image/jpeg,image/png,image/webp"></label>`:''}
+      <label class="wide" style="flex-direction:row;align-items:center;gap:8px"><input name="hidden" type="checkbox" style="width:auto"${p.hidden?' checked':''}> Saytda yashirish (sotuvdan olish)</label>
+      <div class="wide err" id="pErr"></div>
+      <div class="wide acts"><button class="btn" type="submit">Saqlash</button><button class="btn ghost" type="button" id="pCancel">Bekor qilish</button></div>
+    </form>`;
+}
+const fileToDataURL = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(f); });
+
+// ---- sozlamalar
+function drawSettings(){
+  const s = S.settings;
+  $('#view').innerHTML = `<h1>Sozlamalar</h1><p class="sub">Yetkazish, idish va sovg'a narxlari.</p>
+    <form class="card form" id="sf">
+      ${Object.entries(s.delivery).map(([k,d])=>`<label>${esc(d.label)}, so'm<input name="d_${k}" type="number" min="0" step="1000" value="${d.price}"></label>`).join('')}
+      ${s.bottles.map(b=>`<label>Idish: ${esc(b.name)}, so'm<input name="b_${b.id}" type="number" min="0" step="1000" value="${b.price}"></label>`).join('')}
+      <label>Namuna to'plami (3 × 2 ml), so'm<input name="namuna" type="number" min="0" step="1000" value="${s.gifts.namuna}"></label>
+      <label>Sertifikat summalari (vergul bilan)<input name="sert" value="${s.gifts.sertifikat.join(', ')}"></label>
+      <div class="wide err" id="sErr"></div>
+      <div class="wide acts"><button class="btn" type="submit">Saqlash</button></div>
+    </form>`;
+}
+
+// ---- hodisalar
+$('#view').addEventListener('click', async e => {
+  const st = e.target.closest('[data-st]');
+  if (st) { const [no, status] = st.dataset.st.split(':'); st.disabled = true; try { await api('order-status', {no, status}); toast(`${no}: ${STATUS[status]}`); await load(); } catch (err) { if (err.message !== 'auth') toast(err.message); st.disabled = false; } return; }
+  const of = e.target.closest('[data-of]'); if (of) { oFilter = of.dataset.of; draw(); return; }
+  const pk = e.target.closest('[data-pk]'); if (pk) { pKind = pk.dataset.pk; pQuery = ''; draw(); return; }
+  const ed = e.target.closest('[data-edit]'); if (ed) { editing = {p: S[pKind].find(p => p.id === ed.dataset.edit)}; draw(); window.scrollTo(0,0); return; }
+  if (e.target.closest('#newP')) { editing = {p: {name:'', brand:'', gender:'uniseks', notes:[], prices:{}, desc:''}}; draw(); return; }
+  if (e.target.closest('#pCancel')) { editing = null; draw(); }
+});
+$('#view').addEventListener('input', e => { if (e.target.id === 'pq') { pQuery = e.target.value; const pos = e.target.selectionStart; drawProducts(); const el = $('#pq'); el.focus(); el.setSelectionRange(pos, pos); } });
+$('#view').addEventListener('submit', async e => {
+  e.preventDefault(); const f = new FormData(e.target);
+  if (e.target.id === 'pf') {
+    const prices = {}; for (const ml of ['10','20','30','50','100']) if (+f.get('p'+ml) > 0) prices[ml] = +f.get('p'+ml);
+    const patch = {name:f.get('name'), gender:f.get('gender'), country:f.get('country'), desc:f.get('desc'), notes:String(f.get('notes')).split(',').map(s=>s.trim()).filter(Boolean), prices, hidden:f.get('hidden')==='on'};
+    if (pKind === 'klassika') patch.brand = f.get('brand');
+    const file = f.get('image'); let image;
+    try { if (file && file.size) image = await fileToDataURL(file);
+      await api('product', {kind:pKind, id:editing.p.id, patch, image}); editing = null; toast('Saqlandi'); await load(); }
+    catch (err) { if (err.message !== 'auth') $('#pErr').textContent = err.message; }
+  }
+  if (e.target.id === 'sf') {
+    const delivery = {}, bottles = {};
+    for (const [k,v] of f.entries()) { if (k.startsWith('d_')) delivery[k.slice(2)] = +v; if (k.startsWith('b_')) bottles[k.slice(2)] = +v; }
+    try { await api('settings', {delivery, bottles, namuna:+f.get('namuna'), sertifikat:String(f.get('sert')).split(',').map(s=>+s.replace(/\s/g,'')).filter(Boolean)}); toast('Saqlandi'); await load(); }
+    catch (err) { if (err.message !== 'auth') $('#sErr').textContent = err.message; }
+  }
+});
+load().catch(() => {});
+setInterval(() => { if (!$('#app').hidden && tab === 'orders') load().catch(() => {}); }, 30000);
+</script>
+</body></html>

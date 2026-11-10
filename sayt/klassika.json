@@ -1,0 +1,1226 @@
+[
+ {
+  "name": "Symphony",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": "Jacques Cavallier Belletrud",
+  "year": "2021",
+  "gender": "uniseks",
+  "notes": [
+   "Greypfrut",
+   "Bergamot",
+   "Apelsin",
+   "Yangi zanjabil"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 760000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Louis Vuitton Symphony – hashamat va musaffolik uyg’unligi. Yorqin sitrus, bergamot, greypfrut va yangi zanjabil uyg’unligi sizga kun bo’yi tetiklik, nafislik va unutilmas taassurot bag’ishlaydi. O’ziga ishongan insonlar uchun yaratilgan eksklyuziv hid",
+  "id": "k1",
+  "img": "img/klassika/1.jpg"
+ },
+ {
+  "name": "Imagination",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": "Jacques Cavallier Belletrud",
+  "year": "2021",
+  "gender": "erkak",
+  "notes": [
+   "Citron",
+   "Kalabriya bergamoti",
+   "Sitsiliya apelsini",
+   "Tunisiya nerolisi",
+   "Nigeriya zanjabili",
+   "Seylon dolchini",
+   "Xitoy qora choyi",
+   "Guayak yog’ochi",
+   "Olibanum (Ladan)",
+   "Ambroksan"
+  ],
+  "prices": {
+   "10": 250000,
+   "20": 480000,
+   "30": 690000,
+   "50": 1050000,
+   "100": 2000000
+  },
+  "desc": "Ambroksan",
+  "id": "k2",
+  "img": "img/klassika/2.jpg"
+ },
+ {
+  "name": "Gardenia",
+  "brand": "Roja Parfums",
+  "country": "Buyuk Britaniya",
+  "perfumer": "Roja Dove",
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Oqart gul (Orange Blossom)",
+   "Gardeniya",
+   "Yasmin",
+   "May atirguli",
+   "Mimosa",
+   "Binafsha",
+   "Geliotrop",
+   "Sandal daraxti",
+   "Sadr yog’ochi",
+   "Mushk",
+   "Elemi smolasi",
+   "Chinnigul (Clove)",
+   "Shaftoli bargi",
+   "Styraks"
+  ],
+  "prices": {
+   "10": 280000,
+   "20": 540000,
+   "30": 780000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Roja Gardenia — nafis, hashamatli va romantik gulli atir. Oqart gul va yasminning mayin jozibasi bergamotning yengil tetikligi bilan uyg‘unlashib, mushk, sandal va sadrning iliq bazasi bilan mukammal yakun topadi.",
+  "id": "k3",
+  "img": "img/klassika/3.jpg"
+ },
+ {
+  "name": "Montabaco Rio",
+  "brand": "Ormonde Jayne",
+  "country": "Buyuk Britaniya",
+  "perfumer": "Geza Schön",
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Neroli",
+   "Lavanda",
+   "Yasmin",
+   "Geranium",
+   "Apelsin guli",
+   "Binafsha bargi"
+  ],
+  "prices": {
+   "10": 200000,
+   "20": 380000,
+   "30": 510000,
+   "50": 750000,
+   "100": 1300000
+  },
+  "desc": "Montabaco Rio — tropik kayfiyat, hashamat va erkinlikni o’zida mujassam etgan zamonaviy uniseks atir. Yorqin sitrus notalari, nafis gullar va tamakining o’ziga xos jozibasi sandal, vetiver hamda amberning iliq ifori bilan uyg’unlashib, chuqur va unutilmas kompozitsiyani yaratadi. Har bir sepishda quyoshli Rio muhiti, nafislik va ishonch hissini baxsh etadi.",
+  "id": "k4",
+  "img": "img/klassika/4.jpg"
+ },
+ {
+  "name": "Tygar x Refik Anadol",
+  "brand": "Bvlgari",
+  "country": "Italiya",
+  "perfumer": "Jacques Cavallier-Belletrud",
+  "year": "2025 (Limited Edition)",
+  "gender": "erkak",
+  "notes": [
+   "Ambroksan",
+   "Mushk",
+   "Vetiver",
+   "Patchuli",
+   "Ambrette (Mushk urug’i)"
+  ],
+  "prices": {
+   "10": 300000,
+   "20": 570000,
+   "30": 820000,
+   "50": 1280000,
+   "100": 2400000
+  },
+  "desc": "Tygar x Refik Anadol — Bvlgari va raqamli rassom Refik Anadol hamkorligida yaratilgan cheklangan nashrdagi premium atir. Xushbo’y hid greypfrutning yorqin va tetiklashtiruvchi ochilishi bilan boshlanadi. Zanjabil va ambrette unga iliq hamda zamonaviy ohang bag’ishlaydi. Yakunda ambroksan, vetiver, mushk va patchuli uyg’unligi uzoq saqlanadigan, nafis va hashamatli iz qoldiradi. Bu atir kundalik foydalanish hamda maxsus tadbirlar uchun juda mos keladi",
+  "id": "k5",
+  "img": "img/klassika/5.jpg"
+ },
+ {
+  "name": "Miss Dior Parfum",
+  "brand": "Dior",
+  "country": "Fransiya",
+  "perfumer": "Francis Kurkdjian",
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Mevali",
+   "Amber",
+   "Shirin",
+   "Yerimsimon",
+   "Patchulili",
+   "Gulli",
+   "Iliq ziravorli",
+   "Oq gulli",
+   "Sitrusli"
+  ],
+  "prices": {
+   "10": 120000,
+   "20": 230000,
+   "30": 340000,
+   "50": 530000,
+   "100": 980000
+  },
+  "desc": "Miss Dior Parfum — nafislik va zamonaviy ayollik timsoli bo’lgan hashamatli fransuz atiri. U mandarin, shaftoli va o’rikning shirin-mevali ifori bilan ochilib, yurak qismida yovvoyi qulupnay hamda yaseminning romantik guldastasiga ulanadi. Yakunda patchuli, atlas kedri, amberwood va moxning iliq, chuqur hamda uzoq saqlanadigan izi atirga nafis va unutilmas xarakter bag’ishlaydi. Kundalik foydalanish hamda maxsus kechalar uchun ajoyib tanlovdir",
+  "id": "k6",
+  "img": "img/klassika/6.jpg"
+ },
+ {
+  "name": "Tilia",
+  "brand": "Marc-Antoine Barrois",
+  "country": "Fransiya",
+  "perfumer": "Quentin Bisch",
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Vetiver",
+   "Ambroksan",
+   "Georgywood (yog’ochsimon nota)",
+   "Gulli",
+   "Sitrusli"
+  ],
+  "prices": {
+   "10": 150000,
+   "20": 290000,
+   "30": 420000,
+   "50": 650000,
+   "100": 1200000
+  },
+  "desc": "Tilia — Marc-Antoine Barrois’ning nafis va quyoshli kayfiyatni aks ettiruvchi hashamatli fransuz atiri. Ochilishida bergamotning tetiklantiruvchi sitrus nafasi seziladi. Yuragida lipa gulining mayin asalimsimon ifori, yasemin va geliotrop bilan uyg’unlashib, iliq va nafis guldasta yaratadi. Yakunda vetiver, ambroksan va yog’ochsimon notalar atirga zamonaviy, toza va uzoq saqlanadigan iz bag’ishlaydi",
+  "id": "k7",
+  "img": "img/klassika/7.jpg"
+ },
+ {
+  "name": "Gritti Tutù",
+  "brand": "Gritti Venetia",
+  "country": "Italiya",
+  "perfumer": "Luca Gritti",
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Greypfrut",
+   "Limon",
+   "Qora smorodina",
+   "Hindiston yong’og’i"
+  ],
+  "prices": {
+   "10": 150000,
+   "20": 290000,
+   "30": 420000,
+   "50": 650000,
+   "100": 1200000
+  },
+  "desc": "Gritti Tutù Extrait de Parfum — ayollik, nafislik va hashamatni o’zida mujassam etgan premium italyan atiri. Xushbo’y hid greypfrut, limon va qora smorodinaning tetiklantiruvchi mevali uyg’unligi bilan ochiladi. Yurak qismida atirgul, yasemin va oq gullarning nafis guldastasi romantik kayfiyat bag’ishlaydi. Yakunda vanil, mushk, kashmir yog’ochi va amberning iliq, shirin hamda uzoq saqlanadigan izi atirga unutilmas joziba beradi",
+  "id": "k8",
+  "img": "img/klassika/8.jpg"
+ },
+ {
+  "name": "GABA (This is not GABA)",
+  "brand": "GABA Perfumes",
+  "country": "Shvetsariya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Lavanda",
+   "Muskat shalfeyi (Clary Sage)",
+   "Kardamon",
+   "Sadr yog‘ochi",
+   "Vetiver",
+   "Ambra",
+   "Mushk"
+  ],
+  "prices": {
+   "10": 200000,
+   "20": 380000,
+   "30": 550000,
+   "50": 850000,
+   "100": 1600000
+  },
+  "desc": "GABA — zamonaviy, toza va nafis hidga ega uniseks atir. Ochilishida sitruslarning yorqin va tetiklantiruvchi ifori seziladi. Keyinchalik lavanda va ziravorli kardamon bilan yanada nafis tus oladi. Yakunda esa ambra, mushk va yog’ochsimon notalar iliq, uzoq saqlanadigan va hashamatli iz qoldiradi. Kundalik foydalanish hamda barcha fasllar uchun mos, o’ziga ishongan insonlar tanlovi.",
+  "id": "k9",
+  "img": "img/klassika/9.jpg"
+ },
+ {
+  "name": "Black Phantom",
+  "brand": "Kilian Paris",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": "2017",
+  "gender": "uniseks",
+  "notes": [
+   "Rom",
+   "Shakarqamish",
+   "Qora shokolad",
+   "Qahva",
+   "Bodom",
+   "Heliotrop",
+   "Karamel",
+   "Vanil",
+   "Sandal daraxti",
+   "Patchouli",
+   "Vetiver"
+  ],
+  "prices": {
+   "10": 300000,
+   "20": 570000,
+   "30": 820000,
+   "50": 1280000,
+   "100": 2440000
+  },
+  "desc": "Black Phantom by Kilian — shirin, sirli va hashamatli xarakterga ega uniseks atir. Rom va qahvaning boy uyg‘unligi qora shokolad va karamel bilan birlashib, iliq va jozibali hid yaratadi. Vanil, sandal va patchouli esa unga uzoq saqlanuvchi, chuqur va nafis yakun beradi.",
+  "id": "k10",
+  "img": "img/klassika/10.jpg"
+ },
+ {
+  "name": "Hanuman",
+  "brand": "Boadicea the Victorious",
+  "country": "Buyuk Britaniya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Limon",
+   "Mandarin",
+   "Greypfrut",
+   "Amber",
+   "Vanil",
+   "Tonka loviyasi"
+  ],
+  "prices": {
+   "10": 550000,
+   "20": 1050000,
+   "30": 1500000,
+   "50": 2350000,
+   "100": 4500000
+  },
+  "desc": "Hanuman — yorqin sitrus ochilishi va iliq yog‘ochsimon yakuni bilan ajralib turadigan hashamatli uniseks atir. Dastlab bergamot va mandarinning tetiklantiruvchi hidi seziladi, keyinchalik lavanda va gullarning nafis uyg‘unligi namoyon bo‘ladi. Yakunda esa sandal, mushk va amber notalari chuqur, iliq va uzoq saqlanuvchi iz qoldiradi.",
+  "id": "k11",
+  "img": "img/klassika/11.jpg"
+ },
+ {
+  "name": "Bleu de Chanel",
+  "brand": "Chanel",
+  "country": "Fransiya",
+  "perfumer": "Jacques Polge",
+  "year": "2010",
+  "gender": "erkak",
+  "notes": [
+   "Sandal daraxti",
+   "Kedr",
+   "Vetiver",
+   "Patchouli",
+   "Labdanum",
+   "Oq mushk",
+   "Ambroksan"
+  ],
+  "prices": {
+   "10": 150000,
+   "20": 280000,
+   "30": 390000,
+   "50": 600000,
+   "100": 1150000
+  },
+  "desc": "Ambroksan",
+  "id": "k12",
+  "img": "img/klassika/12.jpg"
+ },
+ {
+  "name": "Wood Sage & Sea Salt",
+  "brand": "Jo Malone London",
+  "country": "Buyuk Britaniya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Ambrette urug‘i",
+   "Dengiz tuzi",
+   "Shalfey (Sage)"
+  ],
+  "prices": {
+   "10": 180000,
+   "20": 340000,
+   "30": 490000,
+   "50": 780000,
+   "100": 1500000
+  },
+  "desc": "Wood Sage & Sea Salt — dengiz sohilining toza havosi va tabiiy yog‘och hididan ilhomlangan uniseks atir. Yengil, nafis va zamonaviy hid bo‘lib, tozalik, erkinlik va tabiiylikni yoqtiradiganlar uchun ajoyib tanlov. Kundalik foydalanish va issiq fasllar uchun juda mos.",
+  "id": "k13",
+  "img": "img/klassika/13.jpg"
+ },
+ {
+  "name": "Attrape-Rêves",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Lichi",
+   "Bergamot",
+   "Zanjabi",
+   "Kakao",
+   "Pachuli"
+  ],
+  "prices": {
+   "10": 320000,
+   "20": 610000,
+   "30": 880000,
+   "50": 1370000,
+   "100": 2650000
+  },
+  "desc": "Attrape-Rêves (“Tush tutuvchi”) — Louis Vuitton’ning nafis va hashamatli ayollar atiri. Yorqin mevali va gul ifori iliq kakao hamda pachuli bilan uyg‘unlashib, romantik, jozibali va unutilmas hid yaratadi. Kunduz ham, kechki tadbirlar uchun ham juda mos.",
+  "id": "k14",
+  "img": "img/klassika/14.jpg"
+ },
+ {
+  "name": "Afternoon Swim",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Sitrus",
+   "Yangi",
+   "Toza",
+   "Mevali",
+   "Mushkli",
+   "Yengil aromatik"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 510000,
+   "30": 740000,
+   "50": 1150000,
+   "100": 2200000
+  },
+  "desc": "Afternoon Swim — yoz faslining iliq kuni va O‘rta yer dengizi sohilidan ilhomlangan yorqin sitrus atiri. Toza, tetiklantiruvchi va energiyaga boy hid bo‘lib, erkaklar ham, ayollar ham foydalanishi mumkin (uniseks). Issiq ob-havo va kundalik foydalanish uchun ajoyib tanlov.",
+  "id": "k15",
+  "img": "img/klassika/15.jpg"
+ },
+ {
+  "name": "Aqua Sapphire",
+  "brand": "Boadicea the Victorious",
+  "country": "Buyuk Britaniya",
+  "perfumer": null,
+  "year": "2021",
+  "gender": "uniseks",
+  "notes": [
+   "Sandal daraxti",
+   "Mox (Oakmoss)",
+   "Nagarmotha (Cypriol)",
+   "Amber",
+   "Vanil"
+  ],
+  "prices": {
+   "10": 400000,
+   "20": 780000,
+   "30": 1140000,
+   "50": 1800000,
+   "100": 3500000
+  },
+  "desc": "Aqua Sapphire — dengiz shabadalaridan ilhomlangan hashamatli niche atir. U ochilishida ananas, rom va za’faronning yorqin uyg’unligi bilan e’tiborni tortadi. Yurak qismida nafis May atirguli va mushk kompozitsiyaga nafislik bag’ishlaydi. Yakunda esa sandal daraxti, amber, vanil va mox iliq, chuqur hamda uzoq saqlanuvchi iz qoldiradi. Yangi, dengizsimon, yog‘ochsimon va biroz shirin xarakteri tufayli ayniqsa bahor va yoz fasllari uchun juda mos keladi.",
+  "id": "k16",
+  "img": "img/klassika/16.jpg"
+ },
+ {
+  "name": "Guidance",
+  "brand": "Amouage",
+  "country": "Ummon (Oman)",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Yog‘ochsimon",
+   "Gulli",
+   "Mevali",
+   "Vanilli",
+   "Kahrabo (Amber)",
+   "Balzamik",
+   "Yong‘oqsimon",
+   "Pudrali",
+   "Iliq ziravorli"
+  ],
+  "prices": {
+   "10": 250000,
+   "20": 470000,
+   "30": 680000,
+   "50": 1050000,
+   "100": 2000000
+  },
+  "desc": "Iliq ziravorli",
+  "id": "k17",
+  "img": "img/klassika/17.jpg"
+ },
+ {
+  "name": "Spring Flower",
+  "brand": "Creed",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Mevali",
+   "Gulli",
+   "Sitrusli",
+   "Mushkli",
+   "Yog‘ochsimon",
+   "Yangi (Fresh)",
+   "Kahrabosimon"
+  ],
+  "prices": {
+   "10": 300000,
+   "20": 570000,
+   "30": 820000,
+   "50": 1280000,
+   "100": 2450000
+  },
+  "desc": "Yangi (Fresh)",
+  "id": "k18",
+  "img": "img/klassika/18.jpg"
+ },
+ {
+  "name": "Erba Gold",
+  "brand": "Xerjoff",
+  "country": "BAA emas — Italiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Limon",
+   "Bergamot",
+   "Yashil olma",
+   "Yalpiz",
+   "Mevali notalar",
+   "Dolchin",
+   "Chinnigul",
+   "Oq mushk",
+   "Amber",
+   "Pachuli"
+  ],
+  "prices": {
+   "10": 200000,
+   "20": 380000,
+   "30": 550000,
+   "50": 850000,
+   "100": 1600000
+  },
+  "desc": "Turi: Uniseks, shirin-mevali va iliq xarakterdagi atir",
+  "id": "k19",
+  "img": "img/klassika/19.jpg"
+ },
+ {
+  "name": "Y",
+  "brand": "Yves Saint Laurent",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "erkak",
+  "notes": [
+   "Bergamot",
+   "Zanjabil",
+   "Adaçayı",
+   "Archa rezavorlari",
+   "Amberwood",
+   "Kedr",
+   "Vetiver"
+  ],
+  "prices": {
+   "10": 150000,
+   "20": 290000,
+   "30": 420000,
+   "50": 650000,
+   "100": 1200000
+  },
+  "desc": "YSL Y — yangi, toza va zamonaviy hid",
+  "id": "k20",
+  "img": "img/klassika/20.jpg"
+ },
+ {
+  "name": "Chimilka",
+  "brand": "Vilhelm Parfumerie",
+  "country": "AQSh (brend Nyu-Yorkda tashkil topgan)",
+  "perfumer": null,
+  "year": "2025",
+  "gender": "uniseks",
+  "notes": [
+   "Amber",
+   "Indoneziya patchouli",
+   "Pushti shakar",
+   "Musk"
+  ],
+  "prices": {
+   "10": 200000,
+   "20": 380000,
+   "30": 550000,
+   "50": 850000,
+   "100": 1600000
+  },
+  "desc": "Chimilka — shirin shaftoli va mandarinning yorqin ochilishi, keyin esa charm, za’faron va gullarning sirli uyg‘unligi bilan davom etadigan, iliq va jozibali atir. Amber, pushti shakar va musk esa yakunda yumshoq, shirin va uzoq saqlanadigan taassurot qoldiradi.",
+  "id": "k21",
+  "img": "img/klassika/21.jpg"
+ },
+ {
+  "name": "Isola Snow",
+  "brand": "Roja Parfums",
+  "country": "Buyuk Britaniya, London",
+  "perfumer": null,
+  "year": "2025",
+  "gender": "uniseks",
+  "notes": [
+   "Kardamon",
+   "Ravoch (Rhubarb)",
+   "Kiparis",
+   "Sandal daraxti",
+   "Musk",
+   "Cashmeran",
+   "Rosewood",
+   "Ambroxan",
+   "Orris",
+   "Amber Xtreme"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Ambroxan",
+  "id": "k22",
+  "img": "img/klassika/22.jpg"
+ },
+ {
+  "name": "Torino25",
+  "brand": "Xerjoff",
+  "country": "Italiya — Turin shahrida tashkil topgan",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Vetiver",
+   "Amber",
+   "Musk",
+   "Charm",
+   "Archa mevasi (Juniper)",
+   "Zamsha (Suede)"
+  ],
+  "prices": {
+   "10": 300000,
+   "20": 570000,
+   "30": 820000,
+   "50": 1280000,
+   "100": 2450000
+  },
+  "desc": "Torino25 — kuchli, zamonaviy va hashamatli hid. Dastlab sitrus va ziravorlarning tetikligi seziladi, keyin yumshoq zamsha va charm paydo bo‘ladi. Amber va musk esa atirga iliq, chuqur va uzoq saqlanuvchi yakun beradi.",
+  "id": "k23",
+  "img": "img/klassika/23.jpg"
+ },
+ {
+  "name": "Power of You",
+  "brand": "Giorgio Armani",
+  "country": "Italiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Madagaskar vanili 🍨",
+   "benzoin 🌿",
+   "ladan 🤎",
+   "Frangipani 🌺",
+   "quyoshli akkord ☀️"
+  ],
+  "prices": {
+   "10": 150000,
+   "20": 290000,
+   "30": 420000,
+   "50": 650000,
+   "100": 1200000
+  },
+  "desc": "Yo‘nalishi: Fruity Gourmand — mevali, shirin va iliq vanilli.",
+  "id": "k24",
+  "img": "img/klassika/24.jpg"
+ },
+ {
+  "name": "Oud Wood",
+  "brand": "Tom Ford",
+  "country": "AQSh",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Pushti qalampir",
+   "Kardamon",
+   "Oud (agar yog‘ochi)",
+   "Sandal daraxti",
+   "Vetiver",
+   "Pachuli",
+   "Tonka loviya",
+   "Amber"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 510000,
+   "30": 740000,
+   "50": 1150000,
+   "100": 2200000
+  },
+  "desc": "Oud Wood — chuqur, nafis va juda jozibali yog‘ochli atir. Oud, sandal daraxti va vetiver unga sirli va boy xarakter beradi, kardamon va pushti qalampir esa iliq ziravorli ohang qo‘shadi. Tonka loviya va amber kompozitsiyani yumshoq, iliq va uzoq saqlanadigan taassurot bilan yakunlaydi.",
+  "id": "k25",
+  "img": "img/klassika/25.jpg"
+ },
+ {
+  "name": "Althaïr",
+  "brand": "Parfums de Marly",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "erkak",
+  "notes": [
+   "Bergamot",
+   "Mandarin",
+   "Elemi",
+   "Apelsin guli",
+   "Dolchin",
+   "Kardamon",
+   "Bourbon vanili",
+   "Gaiac daraxti",
+   "Praline"
+  ],
+  "prices": {
+   "10": 220000,
+   "20": 410000,
+   "30": 620000,
+   "50": 950000,
+   "100": 1750000
+  },
+  "desc": "Nomi: Althaïr Eau de Parfum",
+  "id": "k26",
+  "img": "img/klassika/26.jpg"
+ },
+ {
+  "name": "Pink Molécule 090.09",
+  "brand": "Zarkoperfume",
+  "country": "Daniya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "O‘rik",
+   "Qora buzina guli (Elderflower)",
+   "Qora orkide",
+   "Ko‘pirtirilgan qaymoq",
+   "Mahogani daraxti",
+   "Qora yog‘och akkordi"
+  ],
+  "prices": {
+   "10": 120000,
+   "20": 230000,
+   "30": 340000,
+   "50": 530000,
+   "100": 980000
+  },
+  "desc": "Pink Molécule 090.09 — Skandinaviya tabiatining nafisligi va pushti shampanning mayin, jozibali kayfiyatini birlashtirgan zamonaviy atir. Dastlab mevali va shampanli yengil taassurot beradi, keyin esa qaymoqsimon, gulga boy va yog‘ochli baza bilan iliq hamda o‘ziga tortuvchi hid qoldiradi.",
+  "id": "k27",
+  "img": "img/klassika/27.jpg"
+ },
+ {
+  "name": "Devil’s Intrigue",
+  "brand": "HFC",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": "2018-yil",
+  "gender": "ayol",
+  "notes": [
+   "Oq choy",
+   "Osmanthus",
+   "Apelsin guli",
+   "Sandal daraxti",
+   "Vanil",
+   "Cashmeran",
+   "Yog‘ochli notalar"
+  ],
+  "prices": {
+   "10": 220000,
+   "20": 410000,
+   "30": 620000,
+   "50": 950000,
+   "100": 1750000
+  },
+  "desc": "Devil’s Intrigue — nafis, sirli va jozibali hid. Oq choy va osmanthus bilan mayin ochilib, yurak qismida apelsin guli va sandal daraxtining iliq uyg‘unligiga o‘tadi. Vanil, cashmeran va yog‘ochli notalar esa yumshoq, iliq va uzoq qoluvchi iz qoldiradi. 🌸",
+  "id": "k28",
+  "img": "img/klassika/28.jpg"
+ },
+ {
+  "name": "Love Hibiscus",
+  "brand": "Amouage",
+  "country": "Ummon",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Hibiskus",
+   "Atirgul",
+   "Vanil",
+   "Qizil mevalar",
+   "Sitrus mevalar",
+   "Mushk",
+   "Sandal daraxti",
+   "Amber",
+   "Yashil akkordlar"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 760000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Yorqin, shirin va nafis gul iforiga ega. Tropik mevalar va hibiskusning shirali ohangi vanil, mushk va iliq amber bilan uyg‘unlashib, juda jozibali va hashamatli taassurot qoldiradi.",
+  "id": "k29",
+  "img": "img/klassika/29.jpg"
+ },
+ {
+  "name": "Musc Nurasana",
+  "brand": "Maison Crivelli",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Pushti qalampir",
+   "Mushk",
+   "Zanjabil",
+   "Ambroksan",
+   "Oqartirilgan yog‘och notalari",
+   "Iris",
+   "Yashil aksentlar",
+   "Pachuli",
+   "Vanil"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 960000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Nozik, muskusli va zamonaviy hid. Sitrusning yangi ohangi, zanjabil va pushti qalampirning biroz achchiq notalari mushk, ambroksan va vanil bilan uyg‘unlashadi. Nafis, toza va uzoq saqlanadigan ifor.",
+  "id": "k30",
+  "img": "img/klassika/30.jpg"
+ },
+ {
+  "name": "Météore",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "erkak",
+  "notes": [
+   "Bergamot",
+   "Pushti qalampir",
+   "Vetiver",
+   "Yashil aromatik notalar",
+   "Dengiz/mineral akkordlar",
+   "Yog‘ochsimon notalar",
+   "Ambroksan"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 760000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Ambroksan",
+  "id": "k31",
+  "img": "img/klassika/31.jpg"
+ },
+ {
+  "name": "Himalaya",
+  "brand": "Creed",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "erkak",
+  "notes": [
+   "Bergamot",
+   "Limon",
+   "Mandarin",
+   "Archa mevasi (Juniper berry)",
+   "Qalampir",
+   "Muskat yong‘og‘i",
+   "Porox akkordi",
+   "Sandal daraxti",
+   "Vetiver",
+   "Kedr daraxti",
+   "Mushk"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 760000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Himalaya — tog‘ havosidek toza, salqin va tetiklantiruvchi hid. Sitrus notalari yorqin ochiladi, yurak qismida archa mevasi, qalampir va o‘ziga xos porox akkordi paydo bo‘ladi. Yog‘ochsimon baza esa hidga chuqurlik va erkakona xarakter beradi.",
+  "id": "k32",
+  "img": "img/klassika/32.jpg"
+ },
+ {
+  "name": "Bergamask",
+  "brand": "Orto Parisi",
+  "country": "Italiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Limon",
+   "Lavanda",
+   "Apelsin guli",
+   "Landish",
+   "Mushk",
+   "Kedr daraxti",
+   "Tonka loviyasi"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 760000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Bergamask — juda kuchli va o‘ziga xos sitrus-muskli atir. Dastlab bergamot va limonning yorqin, tetik hidlari seziladi. Keyinchalik lavanda va oq gullar paydo bo‘lib, oxirida mushk, kedr va tonka iliq va uzoq saqlanadigan iz qoldiradi.",
+  "id": "k33",
+  "img": "img/klassika/33.jpg"
+ },
+ {
+  "name": "Myriad",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Atirgul",
+   "Yasmin",
+   "Lavanda",
+   "Apelsin gullari",
+   "Ambra",
+   "Vanil",
+   "Sandal daraxti"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Nafis, zamonaviy va romantik hid. Myriad atirgul va yasminning mayin gulli ohanglarini iliq ambra va vanilning shirinligi bilan uyg‘unlashtiradi. Hashamatli, jozibali va uzoq saqlanadigan taassurot qoldiruvchi kompozitsiya.",
+  "id": "k34",
+  "img": "img/klassika/34.jpg"
+ },
+ {
+  "name": "Matsukita",
+  "brand": "Clive Christian",
+  "country": "Angliya  Buyuk Britaniya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Yangi achchiq apelsin",
+   "Bergamot",
+   "Lavanda",
+   "Zambak",
+   "Yasmin",
+   "Amber",
+   "Sandal daraxti",
+   "Mushk",
+   "Vetiver",
+   "Tonka loviya"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Matsukita — nafis, yorqin va hashamatli kompozitsiya. Tsitrus notalarining tetikligi gul va aromatik akkordlar bilan uyg‘unlashib, iliq amber va yog‘ochli ohanglar bilan yakunlanadi. O‘ziga xos, jozibali va aristokratik taassurot qoldiradi.",
+  "id": "k35",
+  "img": "img/klassika/35.jpg"
+ },
+ {
+  "name": "Telea",
+  "brand": "Tiziana Terenzi",
+  "country": "Italiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Greypfrut",
+   "Limon",
+   "Qalampir",
+   "Musk",
+   "Sandal daraxti",
+   "Ambergris",
+   "Vetiver",
+   "Tonka loviya"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1200000,
+   "100": 2400000
+  },
+  "desc": "Telea — yorqin, tetiklantiruvchi va hashamatli hid. Tsitrus notalarining yangi va shirali ochilishi ziravorlar hamda nafis gullar bilan uyg‘unlashadi. Musk, sandal daraxti va ambergris esa kompozitsiyaga iliq, chuqur va jozibali yakun beradi",
+  "id": "k36",
+  "img": "img/klassika/36.jpg"
+ },
+ {
+  "name": "E Cashmere Musk",
+  "brand": "Clive Christian",
+  "country": "Angliya (Buyuk Britaniya)",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Yasmin",
+   "Atirgul",
+   "Ambra",
+   "Paxta mushki",
+   "Vanil",
+   "Sandal daraxti",
+   "Vetiver",
+   "Tonka loviya"
+  ],
+  "prices": {
+   "10": 550000,
+   "20": 1050000,
+   "30": 1500000,
+   "50": 2350000,
+   "100": 4500000
+  },
+  "desc": "E Cashmere Musk — nafis, iliq va juda jozibali hid. Yumshoq mushk va vanilning mayinligi amber hamda sandal daraxtining iliq ohanglari bilan uyg‘unlashib, hashamatli va shinam taassurot yaratadi. Gulli va yog‘ochli aksentlari tufayli kundalik foydalanishdan tortib, maxsus kechalargacha mos keladigan elegant kompozitsiya.",
+  "id": "k37",
+  "img": "img/klassika/37.jpg"
+ },
+ {
+  "name": "My Way",
+  "brand": "Giorgio Armani",
+  "country": "Italiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Oq gullar",
+   "Vanil"
+  ],
+  "prices": {
+   "10": 120000,
+   "20": 230000,
+   "30": 340000,
+   "50": 530000,
+   "100": 980000
+  },
+  "desc": "My Way — juda mashhur, nafis va gullarga boy ayollar parfumi. Oqartirilgan gullar va vanil uyg‘unligi bilan romantik va zamonaviy hid.",
+  "id": "k38",
+  "img": "img/klassika/38.jpg"
+ },
+ {
+  "name": "Stellar Times",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Amber"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1250000,
+   "100": 2400000
+  },
+  "desc": "Stellar Times — yorqin, oltinsimon amberli va hashamatli niche parfum. Juda boy va o‘ziga tortuvchi, premium segment muxlislari uchun ideal tanlov.",
+  "id": "k39",
+  "img": "img/klassika/39.jpg"
+ },
+ {
+  "name": "Fantasmagory",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Jasmin",
+   "Yashil nok",
+   "Amber",
+   "Sitrus",
+   "Sandal daraxti",
+   "Atirgul",
+   "Musk"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1250000,
+   "100": 2400000
+  },
+  "desc": "Musk",
+  "id": "k40",
+  "img": "img/klassika/40.jpg"
+ },
+ {
+  "name": "Ambre Levant",
+  "brand": "Louis Vuitton",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Lavanda",
+   "Yasmin",
+   "Qora murch",
+   "Amber",
+   "Sandal daraxti",
+   "Vanil",
+   "Mushk"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1250000,
+   "100": 2400000
+  },
+  "desc": "Ambre Levant — sharqona nafislik va hashamatni o‘zida mujassam etgan, iliq va jozibali iforga ega atir. Bergamotning tetikligi lavandaning mayinligi bilan uyg‘unlashib, amber, vanil va sandal daraxtining iliq, boy ifori bilan davom etadi.",
+  "id": "k41",
+  "img": "img/klassika/41.jpg"
+ },
+ {
+  "name": "Aventus for Her",
+  "brand": "Creed",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "ayol",
+  "notes": [
+   "Bergamot",
+   "Qora smorodina",
+   "Yasmin",
+   "Atirgul",
+   "Ananas",
+   "Yog‘ochli notalar",
+   "Mushk",
+   "Vanil",
+   "Amber"
+  ],
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1250000,
+   "100": 2400000
+  },
+  "desc": "Creed Aventus for Her — nafislik, joziba va o‘ziga ishonchni ifodalovchi hashamatli ayollar atiri. Mevali va gulli notalarning uyg‘unligi unga yorqin, zamonaviy va esda qolarli xarakter bag‘ishlaydi. Qora smorodinaning shirali ifori, atirgulning nozikligi va yog‘ochsimon notalarning iliq ohangi o‘ziga xos kompozitsiyani yaratadi.",
+  "id": "k42",
+  "img": "img/klassika/42.jpg"
+ },
+ {
+  "name": "1872 Masculine",
+  "brand": "Clive Christian",
+  "country": "Buyuk Britaniya",
+  "perfumer": null,
+  "year": null,
+  "gender": "erkak",
+  "notes": [
+   "Bergamot",
+   "Lavanda",
+   "Yashil akordlar",
+   "Qora murch",
+   "Yog‘ochli notalar",
+   "Ambergris",
+   "Vetiver",
+   "Mushk"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Clive Christian 1872 Masculine — erkaklar uchun yaratilgan hashamatli, nafis va o‘ziga xos atir. Bergamotning tetik sitrus ifori lavandaning mayinligi va yashil akordlarning tabiiyligi bilan uyg‘unlashadi. Qora murch kompozitsiyaga ega",
+  "id": "k43",
+  "img": "img/klassika/43.jpg"
+ },
+ {
+  "name": "Sea My Love",
+  "brand": "Stéphane Humbert Lucas 777",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Yasmin",
+   "Dengiz notalari",
+   "Qizil qalampir",
+   "Amber",
+   "Sandal daraxti"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Sea My Love — dengiz shabadasining tetikligi va nafislikni o‘zida mujassam etgan jozibali atir. Bergamotning sitrusli ifori yasminning nozik gulli ohanglari bilan uyg‘unlashadi. Dengiz notalari yangilik va yengillik hissini uyg‘otsa, amber, sandal daraxti va vanil kompozitsiyaga iliqlik bagishlaydi",
+  "id": "k44",
+  "img": "img/klassika/44.jpg"
+ },
+ {
+  "name": "Tobacco Carnival",
+  "brand": "Maison Crivelli",
+  "country": "Fransiya",
+  "perfumer": null,
+  "year": null,
+  "gender": "uniseks",
+  "notes": [
+   "Bergamot",
+   "Tamaki",
+   "Yasmin",
+   "Qora murch",
+   "Amber",
+   "Sandal daraxti",
+   "Vanil"
+  ],
+  "prices": {
+   "10": 370000,
+   "20": 690000,
+   "30": 990000,
+   "50": 1550000,
+   "100": 2950000
+  },
+  "desc": "Tobacco Carnival — o‘ziga xos, chuqur va jozibali iforga ega hashamatli atir. Bergamotning tetikligi tamakining boy va iliq ifori bilan uyg‘unlashib, yasminning nafisligi hamda qora murchning ziravorli ohangi bilan yanada ochiladi.",
+  "id": "k45",
+  "img": "img/klassika/45.jpg"
+ }
+]

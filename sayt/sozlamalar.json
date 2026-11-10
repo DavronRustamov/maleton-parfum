@@ -1,0 +1,48 @@
+{
+ "delivery": {
+  "pickup": {
+   "label": "Do'kondan olib ketish",
+   "price": 0
+  },
+  "city": {
+   "label": "Toshkent bo'ylab kuryer",
+   "price": 30000
+  },
+  "region": {
+   "label": "Viloyatga (BTS)",
+   "price": 35000
+  }
+ },
+ "bottles": [
+  {
+   "id": "standart",
+   "name": "Standart flakon",
+   "note": "Narxga kiradi",
+   "price": 0,
+   "min": 0
+  },
+  {
+   "id": "premium",
+   "name": "Maleton idishi",
+   "note": "Yashil shisha, oltin qopqoq",
+   "price": 40000,
+   "min": 30
+  },
+  {
+   "id": "refil",
+   "name": "O'z flakonim",
+   "note": "Refil: flakonni olib kelasiz",
+   "price": 0,
+   "min": 0
+  }
+ ],
+ "gifts": {
+  "namuna": 150000,
+  "sertifikat": [
+   300000,
+   500000,
+   1000000,
+   2000000
+  ]
+ }
+}

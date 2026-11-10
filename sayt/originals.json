@@ -1,0 +1,164 @@
+[
+ {
+  "id": "taxtapul",
+  "name": "Taxtapul",
+  "gender": "uniseks",
+  "notes": [
+   "Za'faron",
+   "Charm",
+   "Amber",
+   "Oud",
+   "Vanil"
+  ],
+  "desc": "Maleton uyi turgan mahalla nomi bilan atalgan imzo atiri. Za'faron va charmning iliq ochilishi amber va oud bilan chuqurlashadi, vanil esa yumshoq iz qoldiradi.",
+  "prices": {
+   "10": 250000,
+   "20": 470000,
+   "30": 680000,
+   "50": 1050000,
+   "100": 2000000
+  },
+  "ing": [
+   "zafaron",
+   "charm",
+   "amber",
+   "oud",
+   "vanil"
+  ]
+ },
+ {
+  "id": "olmazor",
+  "name": "Olmazor",
+  "gender": "uniseks",
+  "notes": [
+   "Yashil olma",
+   "Bergamot",
+   "Choy bargi",
+   "Vetiver",
+   "Oq mushk"
+  ],
+  "desc": "Bahor ertalabidagi olma bog'i. Yashil olma va bergamotning tiniq ochilishi, choy bargi va vetiverning toza davomi. Har kuni sepish uchun.",
+  "prices": {
+   "10": 220000,
+   "20": 410000,
+   "30": 600000,
+   "50": 950000,
+   "100": 1800000
+  },
+  "ing": [
+   "yashil_olma",
+   "bergamot",
+   "choy_bargi",
+   "vetiver",
+   "oq_mushk"
+  ]
+ },
+ {
+  "id": "samarqand_oud",
+  "name": "Samarqand Oud",
+  "gender": "uniseks",
+  "notes": [
+   "Oud",
+   "Atirgul",
+   "Za'faron",
+   "Sandal daraxti",
+   "Ladan"
+  ],
+  "desc": "Sharqona kechalar uchun. Oud va atirgulning klassik uyg'unligi za'faron bilan boyiydi, sandal va ladan uni ertangi kungacha olib boradi.",
+  "prices": {
+   "10": 300000,
+   "20": 570000,
+   "30": 820000,
+   "50": 1280000,
+   "100": 2450000
+  },
+  "ing": [
+   "oud",
+   "atirgul",
+   "zafaron",
+   "sandal",
+   "ladan"
+  ]
+ },
+ {
+  "id": "ipak_yoli",
+  "name": "Ipak Yo'li",
+  "gender": "ayol",
+  "notes": [
+   "Atirgul",
+   "Iris",
+   "Pion",
+   "Mushk",
+   "Kashmeran"
+  ],
+  "desc": "Nozik va pudrali gulli atir. Atirgul, iris va pion ipakdek mayin mushk va kashmeran bilan yakunlanadi.",
+  "prices": {
+   "10": 250000,
+   "20": 470000,
+   "30": 680000,
+   "50": 1050000,
+   "100": 2000000
+  },
+  "ing": [
+   "atirgul",
+   "iris",
+   "pion",
+   "oq_mushk",
+   "kashmeran"
+  ]
+ },
+ {
+  "id": "oltin_kech",
+  "name": "Oltin Kech",
+  "gender": "uniseks",
+  "notes": [
+   "Asal",
+   "Tamaki",
+   "Tonka loviyasi",
+   "Vanil",
+   "Amber"
+  ],
+  "desc": "Kuz oqshomining iliq nuri. Asal va tamaki bargining shirin-achchiq uyg'unligi tonka, vanil va amber bilan yumshaydi.",
+  "prices": {
+   "10": 250000,
+   "20": 470000,
+   "30": 680000,
+   "50": 1050000,
+   "100": 2000000
+  },
+  "ing": [
+   "asal",
+   "tamaki",
+   "tonka",
+   "vanil",
+   "amber"
+  ]
+ },
+ {
+  "id": "noir",
+  "name": "Noir",
+  "gender": "erkak",
+  "notes": [
+   "Qora murch",
+   "Charm",
+   "Pachuli",
+   "Kedr",
+   "Ambroksan"
+  ],
+  "desc": "Qat'iy va sokin erkak atiri. Qora murch va charmning keskin ochilishi, pachuli va kedrning quruq yog'ochli bazasi.",
+  "prices": {
+   "10": 270000,
+   "20": 520000,
+   "30": 750000,
+   "50": 1200000,
+   "100": 2300000
+  },
+  "ing": [
+   "qora_murch",
+   "charm",
+   "pachuli",
+   "kedr",
+   "ambroksan"
+  ]
+ }
+]

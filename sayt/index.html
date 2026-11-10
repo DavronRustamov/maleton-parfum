@@ -1,0 +1,1164 @@
+<title>Maleton Parfum</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Cormorant+Garamond:wght@600&display=swap">
+<style>
+/* Layout: emerald header/hero/refill bands from the logo + ivory body; each perfume opens as its own page (#atir-…).
+   Single committed look (brand colors: logo emerald, white mark, ivory label, brushed gold cap). */
+:root{
+  --ink:#0f3d30;        /* logo emerald */
+  --ink-2:#0b2f25;
+  --paper:#f4f3ec;      /* label paper */
+  --card:#fffffb;
+  --stage:#e3eae3;      /* sage stage behind bottles */
+  --stage-2:#cfdccf;
+  --gold:#b8955a;       /* brushed cap */
+  --gold-text:#7a5c2b;  /* gold safe on paper */
+  --gold-light:#dcc493; /* gold safe on emerald */
+  --on-dark:#d7e5dd;
+  --on-dark-2:#a6c1b5;
+  --text:#1c2a25;
+  --muted:#5f6d67;
+  --muted-dark:#a6c1b5;
+  --line:#dde3da;
+  --line-dark:#24584a;
+  --ok:#3d6b4a;
+  --danger:#9b3426;
+  --display:"Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --body:"Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --logo:"Cormorant Garamond", "Times New Roman", Georgia, serif; /* only the wordmark, as in the logo */
+  --card-bg:#efeee8;   /* Brevan-like product tile */
+  --r:10px;
+  --wrap:1180px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.025em}
+em{font-style:normal}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text)}
+.num{font-variant-numeric:tabular-nums}
+
+/* demo strip */
+.demo{background:var(--ink-2);color:var(--gold-light);font-size:12px;text-align:center;padding-block:6px;letter-spacing:.04em}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--ink);color:var(--paper);border-bottom:1px solid var(--line-dark)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1;color:#fff}
+.logo img{height:30px;width:auto;display:block}
+.logo span{display:flex;flex-direction:column}
+.logo b{font-family:var(--logo);font-size:24px;font-weight:600;letter-spacing:.02em}
+.logo small{font-family:var(--logo);font-size:13px;letter-spacing:.32em;color:var(--on-dark);margin-top:1px}
+nav.main{display:flex;gap:22px;margin-left:12px}
+nav.main a{text-decoration:none;font-size:13.5px;color:var(--on-dark);padding-block:6px;border-bottom:1px solid transparent}
+nav.main a:hover{border-color:var(--gold-light)}
+.top .sp{flex:1}
+.cartbtn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line-dark);border-radius:999px;padding:7px 14px;color:var(--paper);font-size:13.5px}
+.cartbtn:hover{border-color:var(--gold-light)}
+.badge{min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:var(--ink);font-size:11.5px;font-weight:700;display:inline-grid;place-items:center;padding:0 6px}
+.badge[data-n="0"]{background:var(--line-dark);color:var(--muted-dark)}
+
+/* hero */
+.hero{background:radial-gradient(ellipse 60% 70% at 72% 55%, #1d5a48 0%, var(--ink) 60%, var(--ink-2) 100%);color:var(--paper);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;padding-block:56px 0}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:500}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero p.lead{color:var(--on-dark);font-size:16.5px;max-width:34em;margin:18px 0 28px}
+.hero .eyebrow{color:var(--gold-light)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold-light)}
+.btn.ghost{border-color:var(--line-dark);color:var(--paper);background:transparent}
+.btn.ghost:hover{border-color:var(--gold-light)}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.dark:hover{background:var(--ink-2)}
+.btn.outline{border-color:var(--line);background:var(--card);color:var(--text)}
+.btn.outline:hover{border-color:var(--gold)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.shelf{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:2%;height:440px;padding-bottom:28px}
+.shelf::before{content:"";position:absolute;left:8%;right:8%;bottom:0;height:56px;border-radius:50%;background:radial-gradient(closest-side,rgba(220,196,147,.28),transparent)}
+.shelf a{position:relative;display:block;width:24%;transition:transform .35s}
+.shelf a:nth-child(2){width:30%;z-index:2}
+.shelf a:hover{transform:translateY(-6px)}
+.shelf img{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 22px rgba(0,0,0,.45))}
+.facts{border-top:1px solid var(--line-dark);margin-top:40px}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-block:0}
+.facts div{padding:18px 18px 20px 0;border-right:1px solid var(--line-dark);font-size:13px;color:var(--on-dark-2)}
+.facts div+div{padding-left:18px}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--display);font-size:24px;font-weight:600;color:var(--paper);line-height:1.1;margin-bottom:2px}
+
+/* sections */
+section.band{padding-block:72px}
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.sechead h2{font-size:clamp(32px,4vw,46px)}
+.sechead p{color:var(--muted);max-width:38em;margin:8px 0 0}
+
+/* originals: Brevan-style tiles. On hover the tile turns white and ingredients fill the space around the bottle */
+.orig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px}
+.ocard{display:flex;flex-direction:column;gap:12px}
+.ocard > a{text-decoration:none;display:block}
+.stage{position:relative;aspect-ratio:1/1.12;overflow:hidden;border-radius:14px;background:var(--card-bg);transition:background .3s}
+.stage .bottle{position:absolute;z-index:2;left:50%;bottom:7%;height:80%;width:auto;transform:translateX(-50%);filter:drop-shadow(0 14px 14px rgba(0,0,0,.18))}
+.stage .ing{position:absolute;z-index:1;width:27%;height:auto;opacity:0;pointer-events:none;
+  transition:opacity .35s ease,transform .6s cubic-bezier(.2,.9,.25,1.15);filter:drop-shadow(0 10px 12px rgba(0,0,0,.16))}
+.stage .ing:nth-child(1){left:13%;top:17%;transform:translate(70%,20%) scale(.45)}
+.stage .ing:nth-child(2){right:12%;top:13%;transform:translate(-70%,25%) scale(.45)}
+.stage .ing:nth-child(3){left:10%;top:47%;width:29%;transform:translate(75%,0) scale(.45)}
+.stage .ing:nth-child(4){right:10%;top:51%;width:28%;transform:translate(-75%,-5%) scale(.45)}
+.stage .ing:nth-child(5){left:19%;bottom:5%;width:24%;transform:translate(60%,-20%) scale(.45)}
+.stage .ing:nth-child(2){transition-delay:.06s}.stage .ing:nth-child(3){transition-delay:.12s}.stage .ing:nth-child(4){transition-delay:.18s}.stage .ing:nth-child(5){transition-delay:.24s}
+.ocard:hover .stage,.stage.open{background:#fff}
+.ocard:hover .stage .ing,.stage.open .ing{opacity:1}
+.ocard:hover .stage .ing:nth-child(1),.stage.open .ing:nth-child(1){transform:rotate(-10deg)}
+.ocard:hover .stage .ing:nth-child(2),.stage.open .ing:nth-child(2){transform:rotate(9deg)}
+.ocard:hover .stage .ing:nth-child(3),.stage.open .ing:nth-child(3){transform:rotate(-4deg)}
+.ocard:hover .stage .ing:nth-child(4),.stage.open .ing:nth-child(4){transform:rotate(5deg)}
+.ocard:hover .stage .ing:nth-child(5),.stage.open .ing:nth-child(5){transform:none}
+@media (hover:none){ .ocard .stage{background:#fff} .ocard .stage .ing{opacity:1;transform:none!important} }
+.ocard .body{display:flex;flex-direction:column;gap:4px}
+.ocard h3{font-size:19px;font-weight:500;letter-spacing:-.01em}
+.ocard .notes{color:var(--muted);font-size:13.5px}
+.ocard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.ocard .price{font-size:19px;font-weight:600}
+.qadd{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;transition:background .2s,transform .2s}
+.qadd:hover{background:#1d5a48;transform:scale(1.05)}
+.price{font-weight:700}
+.price small{font-weight:500;color:var(--muted);font-size:12px}
+.tag{position:absolute;z-index:3;top:12px;left:12px;background:var(--ink);color:var(--gold-light);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:4px}
+
+/* advisor */
+.advisor{background:var(--card);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:1fr 1.15fr;overflow:hidden}
+.advisor .q{padding:32px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--line)}
+.advisor h2{font-size:clamp(30px,3.6vw,40px)}
+.qgroup{display:flex;flex-direction:column;gap:9px}
+.qgroup>span{font-size:13px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px;font-size:13px;transition:border-color .15s,background .15s}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.advisor .res{padding:32px;background:var(--paper);display:flex;flex-direction:column;gap:14px}
+.res h3{font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text)}
+.match{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px;text-decoration:none;transition:border-color .15s}
+.match:hover{border-color:var(--gold)}
+.match img{width:64px;height:80px;object-fit:cover;border-radius:6px;background:#fff}
+.match b{display:block;font-size:15px}
+.match span{font-size:12.5px;color:var(--muted)}
+.why{font-size:12px;color:var(--ok);font-weight:600}
+.empty{color:var(--muted);font-size:14px;padding:20px;border:1px dashed var(--line);border-radius:var(--r);text-align:center}
+
+/* catalog */
+.toolbar{display:flex;flex-direction:column;gap:12px;margin-bottom:22px;position:sticky;top:calc(64px + env(safe-area-inset-top,0px));z-index:20;background:var(--paper);padding-block:12px;border-bottom:1px solid var(--line)}
+.row1{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 260px;min-width:0;position:relative}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 16px 11px 40px;font:inherit;font-size:14px;color:var(--text)}
+.search input:focus{outline:none;border-color:var(--gold)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+select.sort{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 14px;font:inherit;font-size:13.5px;color:var(--text)}
+.count{font-size:13px;color:var(--muted)}
+.chips.scroll{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips.scroll::-webkit-scrollbar{display:none}
+.chips.scroll .chip{flex:none}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pcard{display:flex;flex-direction:column;gap:10px}
+.pcard > a,.pcard .body a,.ocard .body a{text-decoration:none;color:inherit}
+.pcard .ph{display:block}
+.pcard .ph{aspect-ratio:4/5;overflow:hidden;background:var(--card-bg);position:relative;border-radius:14px}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.pcard:hover .ph img{transform:scale(1.03)}
+.pcard .body{display:flex;flex-direction:column;gap:2px;flex:1}
+.pcard h3{font-size:17px;font-weight:500;letter-spacing:-.01em}
+.pcard .brand{font-size:13px;color:var(--muted)}
+.pcard .foot{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pcard .price{font-weight:600;font-size:16px}
+.pcard .qadd{width:38px;height:38px}
+.pcard .g{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text)}
+.new{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:4px}
+
+/* refill */
+.refil{background:var(--ink);color:var(--paper)}
+.refil .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+.refil h2{font-size:clamp(34px,4.4vw,52px);font-weight:500}
+.refil h2 em{color:var(--gold-light)}
+.refil p{color:var(--on-dark)}
+.steps{display:grid;gap:0;counter-reset:s}
+.steps li{list-style:none;display:grid;grid-template-columns:48px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-dark)}
+.steps li:first-child{border-top:1px solid var(--line-dark)}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-size:34px;line-height:1;color:var(--gold-light)}
+.steps b{display:block;font-size:15.5px;margin-bottom:2px}
+.steps span{color:var(--on-dark-2);font-size:13.5px}
+.steps ol{margin:0;padding:0}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px}
+.cbox .eyebrow{margin-bottom:4px}
+.cbox .big{font-size:18px;font-weight:700;user-select:all}
+.cbox p{margin:0;color:var(--muted);font-size:14px}
+.copy{align-self:flex-start;border:1px solid var(--line);background:var(--paper);border-radius:999px;font-size:12px;padding:5px 12px;margin-top:4px}
+
+/* social icons */
+.social{display:flex;gap:8px}
+.social a{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-dark);color:var(--on-dark);transition:background .2s,color .2s,border-color .2s}
+.social a:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--ink)}
+.social svg{width:17px;height:17px}
+.top .social a{width:34px;height:34px}
+
+/* footer with contacts and map */
+footer{background:var(--ink);color:var(--on-dark-2);font-size:14px;padding-block:56px calc(28px + 64px)}
+footer .cols{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:36px;align-items:start}
+footer h4{margin:0 0 12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:600}
+footer .big{color:#fff;font-size:17px;font-weight:600;user-select:all}
+footer p{margin:0 0 6px}
+footer a.lnk{color:var(--on-dark);text-underline-offset:3px}
+.map{display:block;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line-dark);aspect-ratio:650/400;max-width:100%}
+.map img{width:100%;height:100%;object-fit:cover;display:block}
+.map span{position:absolute;left:10px;bottom:10px;background:var(--ink);color:#fff;font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:999px}
+footer .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:13px}
+.scrim{position:fixed;inset:0;background:rgba(10,25,20,.5);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+
+/* product page */
+.ppage{padding-block:24px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);text-decoration:none;margin-bottom:18px}
+.back:hover{color:var(--text)}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:18px;display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{color:var(--muted)}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.pd .media{background:var(--card-bg);position:sticky;top:calc(84px + env(safe-area-inset-top,0px));align-self:start;aspect-ratio:1/1.12;overflow:hidden;border-radius:16px}
+.pd .media > img{width:100%;height:100%;object-fit:cover;display:block}
+.pd .media .stage{aspect-ratio:auto;height:100%}
+.ingchips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.ingchips div{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 4px}
+.ingchips img{width:52px;height:52px;object-fit:contain}
+.thumbbg{background:var(--stage)!important;object-fit:contain!important}
+.pd .info{padding-top:8px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.pd h2{font-size:clamp(34px,4vw,48px)}
+.pd .sub{color:var(--muted);font-size:14px;margin-top:4px}
+.sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.size{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:10px 4px;text-align:center;display:flex;flex-direction:column;gap:2px;transition:border-color .15s}
+.size b{font-size:15px}
+.size span{font-size:11px;color:var(--muted)}
+.size[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.size[aria-pressed="true"] span{color:var(--muted-dark)}
+.buy{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.buy .total{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
+.buy .perml{font-size:12.5px;color:var(--muted)}
+.buy .grow{flex:1;min-width:120px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.qty button{width:34px;height:36px;border:0;background:transparent;font-size:18px}
+.qty span{min-width:26px;text-align:center;font-weight:600}
+.noteschips{display:flex;flex-wrap:wrap;gap:6px}
+.noteschips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13px}
+dl.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:14px}
+dl.meta dt{color:var(--muted)}
+dl.meta dd{margin:0}
+.pd h4,.gp h4{margin:0 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text)}
+.similar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.similar a{text-decoration:none;font-size:13px;display:flex;flex-direction:column;gap:4px}
+.similar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:#fff}
+.perks{display:grid;gap:8px;font-size:13.5px;color:var(--muted);padding:0;margin:0;list-style:none}
+.perks li{display:flex;gap:8px}
+.perks li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px}
+
+/* cart drawer */
+.cart{position:fixed;z-index:95;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--paper);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.cart.on{transform:none}
+.cart header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.cart header h2{font-size:28px}
+.cart .x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:18px}
+.cart .scroll{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px}
+.line img{width:56px;height:70px;object-fit:cover;border-radius:6px;background:#fff}
+.line b{display:block;font-size:14.5px}
+.line .s{font-size:12.5px;color:var(--muted)}
+.line .r{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.line .rm{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;padding:0}
+.form{display:flex;flex-direction:column;gap:12px;padding-top:8px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12.5px;font-weight:600}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:10px 12px;font:inherit;font-size:14px;color:var(--text);width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field .err{color:var(--danger);font-size:12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:9px 6px;font-size:12.5px;line-height:1.25}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sum{border-top:1px solid var(--line);padding:14px 20px 18px;display:flex;flex-direction:column;gap:6px;background:var(--card)}
+.sum .r{display:flex;justify-content:space-between;font-size:14px;font-variant-numeric:tabular-nums}
+.sum .r.t{font-size:18px;font-weight:700;margin-top:4px}
+.sum .hint{font-size:12px;color:var(--muted)}
+.done{display:flex;flex-direction:column;gap:14px;text-align:left}
+.done .ok{font-family:var(--display);font-size:30px;color:var(--ok)}
+.done pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:12.5px;font-family:var(--body);margin:0}
+
+/* toast + bottom nav */
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-size:13.5px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:120}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.bnav{display:none}
+
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .orig-grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{grid-template-columns:1fr}
+  .shelf{height:340px}
+  .advisor{grid-template-columns:1fr}
+  .advisor .q{border-right:0;border-bottom:1px solid var(--line)}
+  .refil .wrap{grid-template-columns:1fr;gap:28px}
+  .pd{grid-template-columns:1fr;gap:24px}
+  .pd .media{position:relative;top:0;max-height:620px}
+  .pd .media > img{object-fit:contain;background:#fff}
+  footer .cols{grid-template-columns:1fr 1fr}
+  footer .cols > :last-child{grid-column:1/-1}
+}
+@media (max-width:720px){
+  nav.main{display:none}
+  .top .cartbtn .lbl{display:none}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .pcard h3{font-size:18px}
+  .pcard .body{padding:10px 11px 12px}
+  .facts .wrap{grid-template-columns:repeat(2,1fr)}
+  .facts div{padding:14px 12px 14px 0!important}
+  .facts div:nth-child(2n){border-right:0;padding-left:14px!important}
+  .facts div:nth-child(n+3){border-top:1px solid var(--line-dark)}
+  .contact{grid-template-columns:1fr}
+  section.band{padding-block:52px}
+  .advisor .q,.advisor .res{padding:22px 18px}
+  .pd .info{padding:24px 18px 32px}
+  .sizes{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+  .size span{font-size:10px}
+  .similar{grid-template-columns:repeat(2,1fr)}
+  .bnav{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--ink);border-top:1px solid var(--line-dark);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .top .social{display:none}
+  footer .cols{grid-template-columns:1fr}
+  .bnav a,.bnav button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 10px;font-size:11px;color:var(--on-dark);text-decoration:none;background:none;border:0}
+  .bnav svg{width:20px;height:20px}
+  .bnav .badge{position:absolute;margin-left:18px;margin-top:-4px;height:17px;min-width:17px;font-size:10px}
+}
+@media (max-width:420px){ .ingchips{grid-template-columns:repeat(3,1fr)} .orig-grid{grid-template-columns:1fr 1fr;gap:10px} .ocard h3{font-size:21px} .ocard .notes{display:none} .ocard .body{padding:12px} }
+
+/* ---- premium layer ---- */
+body{font-size:15.5px;letter-spacing:-.003em}
+section.band{padding-block:104px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.24em}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7}
+.sechead{margin-bottom:44px}
+.sechead h2{font-size:clamp(34px,4.4vw,54px);font-weight:500;letter-spacing:-.035em;margin-top:14px!important}
+.sechead p{font-size:16px;line-height:1.6;margin-top:14px}
+.btn{border-radius:999px;padding:15px 26px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.btn.outline{border-color:var(--text);background:transparent}
+.btn.outline:hover{background:var(--text);color:var(--paper);border-color:var(--text)}
+.hero{position:relative}
+.hero::after{content:"";position:absolute;right:-4%;top:-6%;width:46%;aspect-ratio:185/142;background:url(img/mark.png) no-repeat center/contain;opacity:.05;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:88px 8px}
+.hero h1{font-size:clamp(46px,7vw,92px);font-weight:500;letter-spacing:-.045em;line-height:.98}
+.hero h1 em{color:var(--gold-light)}
+.hero p.lead{font-size:17px;line-height:1.65;color:var(--on-dark-2);margin:26px 0 36px}
+.facts{position:relative;z-index:1;margin-top:56px}
+.facts b{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.03em}
+.ocard h3,.pcard h3{font-weight:500}
+.stage,.pcard .ph,.pd .media{border-radius:6px}
+.tag{background:transparent;border:1px solid rgba(15,61,48,.35);color:var(--ink);font-size:10px;letter-spacing:.2em;padding:5px 10px;border-radius:999px}
+.advisor{border:0;border-radius:6px;box-shadow:0 1px 0 var(--line),0 30px 60px -40px rgba(15,61,48,.35)}
+.advisor h2{font-weight:500;letter-spacing:-.035em}
+.refil h2{font-weight:500;letter-spacing:-.04em}
+.pd h2{font-weight:500;letter-spacing:-.04em;font-size:clamp(38px,4.6vw,60px)}
+header.top{background:rgba(15,61,48,.96);backdrop-filter:saturate(1.2) blur(10px)}
+nav.main a{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.demo{font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding-block:7px}
+
+/* ---- reels ---- */
+.reels{background:var(--card)}
+.reelrow{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px) / 4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.reelrow::-webkit-scrollbar{display:none}
+.reel{position:relative;scroll-snap-align:start;aspect-ratio:9/16;border-radius:6px;overflow:hidden;background:radial-gradient(ellipse 80% 55% at 50% 45%,#2a6a56,var(--ink) 70%,var(--ink-2));color:#fff;border:0;padding:0;text-align:left;display:block;width:100%;cursor:pointer}
+.reel .pb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.reel:hover .pb{transform:scale(1.04)}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.reel .shade{position:absolute;inset:auto 0 0;height:48%;background:linear-gradient(transparent,rgba(5,20,15,.92))}
+.reel .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;transition:background .2s}
+.reel:hover .play{background:var(--gold-light);border-color:var(--gold-light);color:var(--ink)}
+.reel .who{position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-direction:column;gap:3px}
+.reel .who b{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.reel .who span{font-size:12.5px;color:var(--on-dark-2)}
+.reel .lab{position:absolute;top:12px;left:12px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(5,20,15,.45);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.reel.playing .pb,.reel.playing .shade,.reel.playing .play,.reel.playing .who,.reel.playing .lab{display:none}
+@media (max-width:980px){ .reelrow{grid-auto-columns:calc((100% - 32px) / 3)} }
+@media (max-width:720px){ section.band{padding-block:68px} .reelrow{grid-auto-columns:62%} .hero .wrap{padding-block:56px 0} }
+
+/* ---- nav dropdown ---- */
+nav.main{align-items:center}
+.dd{position:relative}
+.ddt{display:inline-flex;align-items:center;gap:6px}
+.ddm{position:absolute;top:calc(100% + 10px);left:-14px;min-width:270px;background:var(--card);border-radius:10px;box-shadow:0 24px 50px -20px rgba(5,20,15,.45);padding:8px;display:none;flex-direction:column;gap:2px}
+.ddm::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.dd:hover .ddm,.dd:focus-within .ddm{display:flex}
+nav.main .ddm a{display:flex;flex-direction:column;gap:2px;color:var(--text);text-transform:none;letter-spacing:0;font-size:14px;padding:10px 12px;border-radius:7px;border:0}
+nav.main .ddm a:hover{background:var(--paper)}
+.ddm b{font-weight:600}
+.ddm span{font-size:12.5px;color:var(--muted)}
+.newtag{display:inline-block;margin-left:6px;font-size:9.5px;letter-spacing:.12em;background:var(--gold-light);color:var(--ink);border-radius:999px;padding:2px 7px;vertical-align:2px}
+
+/* ---- gifts ---- */
+.gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px}
+.gcard{display:flex;flex-direction:column;gap:12px}
+.gcard > a{display:block;aspect-ratio:1/1;border-radius:6px;overflow:hidden;background:var(--card-bg)}
+.gcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.gcard:hover img{transform:scale(1.04)}
+.gcard h3{font-size:19px;font-weight:500;letter-spacing:-.01em}
+.gcard h3 a{text-decoration:none;color:inherit}
+.gcard .meta{font-size:13.5px;color:var(--muted)}
+.gcard .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap}
+.gcard .price{font-size:17px;font-weight:600}
+.gcard .btn{padding:11px 16px;font-size:11px}
+.gnotes{list-style:none;padding:0;margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid var(--line);padding-top:28px}
+.gnotes li{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+.gnotes b{color:var(--text);font-weight:600}
+.gp{display:grid;grid-template-columns:1fr 1.05fr;gap:48px}
+.gp .media{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:22px}
+.gp .media .pic{aspect-ratio:1/1;border-radius:6px;overflow:hidden;background:var(--card-bg)}
+.gp .media .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.howto{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:h}
+.howto li{font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.howto li::before{counter-increment:h;content:counter(h);font-size:26px;font-weight:500;color:var(--ink);letter-spacing:-.03em}
+.gp .info{display:flex;flex-direction:column;gap:22px;min-width:0}
+.gp h2{font-size:clamp(38px,4.6vw,58px);font-weight:500;letter-spacing:-.04em}
+.gp .sub{color:var(--muted);margin-top:6px}
+.gp .bigprice{font-size:26px;font-weight:600;letter-spacing:-.02em}
+.notice{font-size:13px;background:var(--card);border-radius:8px;padding:10px 14px;color:var(--muted)}
+.slots{display:grid;gap:8px}
+.slot{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;border:1px dashed var(--stage-2);border-radius:8px;padding:8px 10px;min-height:62px;font-size:14px;color:var(--muted)}
+.slot .n{width:44px;height:44px;border-radius:6px;background:var(--card-bg);display:grid;place-items:center;font-weight:600;color:var(--muted)}
+.slot img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:var(--stage)}
+.slot.filled{border-style:solid;border-color:var(--line);background:var(--card);color:var(--text)}
+.slot .x{border:0;background:none;font-size:18px;color:var(--muted);width:32px;height:32px}
+.psearch{width:100%;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 16px;font:inherit;font-size:14px;color:var(--text)}
+.psearch:focus{outline:none;border-color:var(--gold)}
+.plist{display:flex;flex-direction:column;gap:6px}
+.plist h4{margin:10px 0 4px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text);font-weight:600}
+.pitem{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:8px 12px 8px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);text-align:left;width:100%;transition:border-color .15s}
+.pitem:hover{border-color:var(--gold)}
+.pitem img{width:48px;height:56px;object-fit:cover;border-radius:5px;background:var(--stage)}
+.pitem img.c{object-fit:contain}
+.pitem b{display:block;font-size:14.5px;font-weight:600}
+.pitem span{font-size:12.5px;color:var(--muted)}
+.pitem .r{font-size:13px;font-weight:600;white-space:nowrap}
+.pitem[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pitem[aria-pressed="true"] .r::before{content:"✓ ";color:var(--ok)}
+.pitem[disabled]{opacity:.4;cursor:not-allowed}
+.gbar{position:sticky;bottom:0;z-index:5;background:var(--paper);border-top:1px solid var(--line);padding-block:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.gbar .cnt{font-size:13.5px;color:var(--muted)}
+.gbar .tot{font-size:20px;font-weight:600}
+.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.amounts button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:14px 6px;font-weight:600;font-size:14px}
+.amounts button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.certcard{aspect-ratio:1.6/1;border-radius:12px;padding:26px;background:radial-gradient(ellipse 90% 80% at 30% 20%,#1d5a48,var(--ink) 60%,var(--ink-2));color:var(--gold-light);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -30px rgba(5,20,15,.6)}
+.certcard .t{display:flex;justify-content:space-between;align-items:center}
+.certcard img{height:34px;width:auto}
+.certcard .amt{font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-.03em;color:#fff}
+.certcard .to{font-size:14px;color:var(--on-dark)}
+@media (max-width:980px){ .gift-grid{grid-template-columns:repeat(2,1fr)} .gp{grid-template-columns:1fr;gap:28px} .gp .media{position:relative;top:0} .gnotes{grid-template-columns:1fr} }
+@media (max-width:720px){ .gbar{bottom:calc(58px + env(safe-area-inset-bottom,0px))} .amounts{grid-template-columns:repeat(2,1fr)} .howto{grid-template-columns:1fr} }
+
+/* ---- audit fixes ---- */
+.orig-grid,.grid,.gift-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.hero h1{font-size:clamp(40px,5.6vw,78px);line-height:1.02}
+.hero .wrap{grid-template-columns:1.25fr 1fr}
+.toolbar{position:static;border-bottom:0;padding-block:0 4px;margin-bottom:28px}
+.gcard{height:100%}
+.gcard .foot{flex-direction:column;align-items:stretch;gap:12px;margin-top:auto;padding-top:8px;flex-wrap:nowrap}
+.gcard .btn{width:100%}
+.ocard .foot,.pcard .foot{gap:8px}
+.ocard .price,.pcard .price{min-width:0}
+.size b{white-space:nowrap}
+.pd .media.poster{aspect-ratio:4/5}
+.bottles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bottle-opt{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:10px 12px;text-align:left;display:flex;flex-direction:column;gap:2px;transition:border-color .15s}
+.bottle-opt b{font-size:14px;font-weight:600}
+.bottle-opt span{font-size:12px;color:var(--muted)}
+.bottle-opt i{font-style:normal;font-size:12.5px;font-weight:600;color:var(--gold-text)}
+.bottle-opt[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.bottle-opt[disabled]{opacity:.45;cursor:not-allowed}
+.sending{opacity:.6;pointer-events:none}
+@media (max-width:980px){ .orig-grid,.gift-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .grid{grid-template-columns:repeat(3,minmax(0,1fr))} .hero .wrap{grid-template-columns:1fr} }
+@media (max-width:720px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ocard .price,.pcard .price{font-size:15px}
+  .price small{display:block;font-size:11px}
+  .qadd,.pcard .qadd{width:36px;height:36px}
+  .size{padding:9px 2px}.size b{font-size:13px}
+  .bottles{grid-template-columns:1fr}
+  .howto{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gcard .btn{padding:11px 8px;font-size:10.5px;letter-spacing:.08em;white-space:normal}
+  .gp .bigprice{display:none}
+}
+</style>
+
+<div class="demo">Demo prototip · narxlar va mualliflik atirlari tavsiflari vaqtinchalik</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#bosh" aria-label="Maleton parfums bosh sahifa"><img src="img/mark.png" alt="" width="39" height="30"><span><b>Maleton</b><small>parfums</small></span></a>
+    <nav class="main" aria-label="Asosiy menyu">
+      <div class="dd">
+        <a href="#klassika" class="ddt" aria-haspopup="true">Katalog <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="ddm">
+          <a href="#mualliflik"><b>Mualliflik kolleksiyasi</b><span>Faqat Maleton'da</span></a>
+          <a href="#klassika"><b>Klassika</b><span>Dunyo atirlari talqinlari</span></a>
+          <a href="#maslahat"><b>Atir tanlash</b><span>3 savolda tavsiya</span></a>
+          <a href="#refil"><b>Refil xizmati</b><span>Flakoningizni to'ldiramiz</span></a>
+        </div>
+      </div>
+      <a href="#sovgalar">Sovg'alar <span class="newtag">Yangi</span></a>
+    </nav>
+    <div class="sp"></div>
+    <div class="social"><a href="https://t.me/maletonparfum" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 18.4 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.4-1 .4l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.6 12.9l-4.6-1.4c-1-.3-1-1 .2-1.5L20.2 3c.8-.3 1.6.2 1.3 1.3Z"/></svg></a><a href="https://www.instagram.com/maleton.parfum/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://yandex.uz/maps/-/CXC7MJk9" target="_blank" rel="noopener" aria-label="Yandex Xarita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg></a></div>
+    <button class="cartbtn" id="openCart" type="button" aria-label="Savatni ochish">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="lbl">Savat</span><span class="badge num" id="cartCount" data-n="0">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="bosh">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Exclusive scents for unique people</div>
+        <h1 style="margin-top:14px">Noyob insonlar uchun <em>noyob</em> iforlar</h1>
+        <p class="lead">Maleton mualliflik atirlari va 500 dan ortiq dunyo klassikasining kuchaytirilgan talqinlari. Fransiya va Shveytsariya xomashyosi, istalgan hajmda quyib beramiz.</p>
+        <div class="btns">
+          <a class="btn gold" href="#mualliflik">Mualliflik kolleksiyasi</a>
+          <a class="btn ghost" href="#maslahat">Menga atir tanlang</a>
+        </div>
+      </div>
+      <div class="shelf" aria-label="Maleton mualliflik idishlari">
+        <a href="#atir-olmazor"><img src="img/originals/olmazor.webp" alt="Maleton Olmazor idishi"></a>
+        <a href="#atir-taxtapul"><img src="img/originals/taxtapul.webp" alt="Maleton Taxtapul idishi"></a>
+        <a href="#atir-samarqand_oud"><img src="img/originals/samarqand_oud.webp" alt="Maleton Samarqand Oud idishi"></a>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="wrap">
+        <div><b class="num">500+</b>atir tanlovi</div>
+        <div><b>10–100 ml</b>istalgan hajmda quyamiz</div>
+        <div><b>Butun O'zbekiston</b>bo'ylab yetkazish</div>
+        <div><b>Refil</b>bo'sh flakonni to'ldiramiz</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="mualliflik">
+    <div class="wrap">
+      <div class="sechead">
+        <div>
+          <div class="eyebrow">Maleton Originals</div>
+          <h2 style="margin-top:8px">Mualliflik kolleksiyasi</h2>
+          <p>Faqat Maleton'da. Har bir atir shahar va yo'llar nomi bilan atalgan. Idish ustiga olib boring: orqasida atir tarkibidagi xomashyolar paydo bo'ladi.</p>
+        </div>
+      </div>
+      <div class="orig-grid" id="origGrid"></div>
+    </div>
+  </section>
+
+
+  <section class="band" id="sovga-teaser" style="padding-top:0">
+    <div class="wrap">
+      <div class="sechead">
+        <div><div class="eyebrow">Sovg'alar</div><h2>Yaqiningizga ifor sovg'a qiling</h2><p>Namuna to'plami, Maleton qutisi, juftlik to'plami va sovg'a sertifikati.</p></div>
+        <a class="btn outline" href="#sovgalar">Barcha sovg'alar</a>
+      </div>
+      <div class="gift-grid" id="giftTeaser"></div>
+    </div>
+  </section>
+
+  <section class="band" id="maslahat">
+    <div class="wrap">
+      <div class="advisor">
+        <div class="q">
+          <div>
+            <div class="eyebrow">Atir maslahatchisi</div>
+            <h2 style="margin-top:8px">Uchta savol, bir zumda tavsiya</h2>
+          </div>
+          <div class="qgroup"><span>Kim uchun?</span><div class="chips" data-q="gender"></div></div>
+          <div class="qgroup"><span>Qanday hid yoqadi?</span><div class="chips" data-q="family"></div></div>
+          <div class="qgroup"><span>20 ml uchun budjet</span><div class="chips" data-q="budget"></div></div>
+        </div>
+        <div class="res" aria-live="polite">
+          <h3 id="resTitle">Sizga mos atirlar</h3>
+          <div id="resList" style="display:flex;flex-direction:column;gap:10px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="klassika" style="padding-top:0">
+    <div class="wrap">
+      <div class="sechead">
+        <div>
+          <div class="eyebrow">Klassika</div>
+          <h2 style="margin-top:8px">Dunyo atirlari, kuchaytirilgan formulada</h2>
+          <p>Mashhur brendlardan ilhomlangan, asl hidiga maksimal yaqin talqinlar. Kartadagi narx 20 ml uchun.</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="row1">
+          <label class="search" for="q">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" type="search" placeholder="Atir, brend yoki nota: masalan, vanil" autocomplete="off">
+          </label>
+          <select class="sort" id="sort" aria-label="Saralash">
+            <option value="new">Avval yangilari</option>
+            <option value="asc">Arzonroq</option>
+            <option value="desc">Qimmatroq</option>
+            <option value="az">Nomi bo'yicha</option>
+          </select>
+          <span class="count num" id="count"></span>
+        </div>
+        <div class="chips scroll" id="fGender"></div>
+        <div class="chips scroll" id="fFamily"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div style="display:flex;justify-content:center;margin-top:28px"><button class="btn outline" type="button" id="more">Ko'proq ko'rish</button></div>
+    </div>
+  </section>
+
+  <section class="band refil" id="refil">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-light)">Refil xizmati</div>
+        <h2 style="margin-top:10px">Bo'sh flakonni tashlamang, <em>to'ldirib beramiz</em></h2>
+        <p style="margin:16px 0 24px;max-width:32em">Sevimli idishingiz qolsin. Biz uni siz tanlagan hid bilan, originalidan ham kuchliroq formulada qayta to'ldiramiz. Viloyatdan pochta orqali ham jo'natishingiz mumkin.</p>
+        <a class="btn gold" href="https://t.me/maletonparfum" target="_blank" rel="noopener">Telegramda refil buyurtma qilish</a>
+      </div>
+      <ol class="steps">
+        <li><div><b>Flakonni olib keling yoki jo'nating</b><span>Taxtapuldagi do'konga yoki BTS orqali.</span></div></li>
+        <li><div><b>Hidni tanlang</b><span>Katalogdan istalgan atir, istalgan hajm.</span></div></li>
+        <li><div><b>To'ldirib qaytaramiz</b><span>Narx faqat atir uchun, idish puli olinmaydi.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band reels" id="fikrlar">
+    <div class="wrap">
+      <div class="sechead">
+        <div>
+          <div class="eyebrow">Mijozlarimiz fikri</div>
+          <h2>Ular Maleton'ni tanladi</h2>
+          <p>Taniqli mehmonlarimiz Maleton do'konida atir tanlab, o'z fikrlarini aytishdi.</p>
+        </div>
+      </div>
+      <div class="reelrow" id="reels"></div>
+    </div>
+  </section>
+
+</main>
+
+<section class="ppage" id="giftsPage" hidden>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Yo'l"><a href="#bosh">Bosh sahifa</a><span>/</span><span>Sovg'alar</span></nav>
+    <div class="sechead" style="margin-bottom:36px"><div><h2 style="font-size:clamp(40px,5.4vw,68px)">Sovg'alar</h2>
+      <p>To'rt xil sovg'a: o'zingiz tanlagan uchta atirdan namuna to'plami, uchta 30 ml atir uchun bepul Maleton qutisi, ikki kishilik juftlik to'plami va istalgan atirga almashtiriladigan sertifikat.</p></div></div>
+    <div class="gift-grid" id="giftGrid"></div>
+    <ul class="gnotes">
+      <li><b>Bepul qadoqlash</b><span>Har bir sovg'a Maleton qutisida, tabrik kartochkasi bilan.</span></li>
+      <li><b>Butun O'zbekiston bo'ylab</b><span>Toshkentda kuryer, viloyatlarga BTS orqali.</span></li>
+      <li><b>Tanlashga yordam</b><span>Telegramda yozing, did va budjetga qarab maslahat beramiz.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="ppage" id="giftPage" hidden>
+  <div class="wrap"><nav class="crumbs" id="gcrumbs" aria-label="Yo'l"></nav><div id="gp"></div></div>
+</section>
+
+<section class="ppage" id="atirPage" hidden>
+  <div class="wrap"><nav class="crumbs" id="crumbs" aria-label="Yo'l"></nav><div id="pd"></div></div>
+</section>
+
+<footer id="aloqa">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#bosh"><img src="img/mark.png" alt="" width="39" height="30"><span><b>Maleton</b><small>parfums</small></span></a>
+        <p style="margin:16px 0 18px;max-width:22em">Sifat, nafislik va ishonch birlashgan manzil. Butun O'zbekiston bo'ylab yetkazib beramiz.</p>
+        <div class="social"><a href="https://t.me/maletonparfum" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3 18.4 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.4-1 .4l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.6 12.9l-4.6-1.4c-1-.3-1-1 .2-1.5L20.2 3c.8-.3 1.6.2 1.3 1.3Z"/></svg></a><a href="https://www.instagram.com/maleton.parfum/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://yandex.uz/maps/-/CXC7MJk9" target="_blank" rel="noopener" aria-label="Yandex Xarita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg></a></div>
+      </div>
+      <div>
+        <h4>Aloqa</h4>
+        <p class="big num">+998 94 359 09 99</p>
+        <p class="big num">+998 93 979 09 99</p>
+        <p style="margin-top:10px">Telegram: <a class="lnk" href="https://t.me/maletonparfum" target="_blank" rel="noopener">@maletonparfum</a></p>
+        <p>Har kuni, buyurtmalar Telegram orqali</p>
+      </div>
+      <div>
+        <h4>Do'kon manzili</h4>
+        <p style="color:#fff">Shimoliy Olmazor, Kichik Halqa yo'li, Usta Olim ko'chasi, 90-uy</p>
+        <p style="margin-bottom:12px">Taxtapul masjidi yonida</p>
+        <!-- Haqiqiy saytda bu rasm o'rniga jonli xarita: <iframe src="https://yandex.uz/map-widget/v1/?ll=69.257549%2C41.347923&z=16&oid=227327773209" loading="lazy"></iframe> -->
+        <a class="map" href="https://yandex.uz/maps/-/CXC7MJk9" target="_blank" rel="noopener" aria-label="Maleton do'konini Yandex Xaritada ochish"><img src="img/map.webp" alt="Maleton do'koni xaritada, Usta Olim ko'chasi 90" loading="lazy" width="650" height="400"><span>Yandex Xaritada ochish</span></a>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 Maleton Parfum · Toshkent</span><span>Exclusive scents for unique people</span></div>
+  </div>
+</footer>
+
+<nav class="bnav" aria-label="Pastki menyu">
+  <a href="#bosh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 11 12 4l8 7v9H4z"/></svg>Bosh</a>
+  <a href="#klassika"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Katalog</a>
+  <a href="#sovgalar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="8" width="17" height="12.5" rx="1"/><path d="M3.5 12h17M12 8v12.5M12 8c-1.5-3.5-6-3.5-5 0M12 8c1.5-3.5 6-3.5 5 0"/></svg>Sovg'alar</a>
+  <button type="button" id="openCart2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Savat<span class="badge num" id="cartCount2" data-n="0">0</span></button>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Savat">
+  <header><h2>Savat</h2><button class="x" id="closeCart" type="button" aria-label="Yopish">×</button></header>
+  <div class="scroll" id="cartBody"></div>
+  <div class="sum" id="cartSum"></div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script id="data" type="application/json">{"originals": [{"id": "taxtapul", "name": "Taxtapul", "gender": "uniseks", "notes": ["Za'faron", "Charm", "Amber", "Oud", "Vanil"], "desc": "Maleton uyi turgan mahalla nomi bilan atalgan imzo atiri. Za'faron va charmning iliq ochilishi amber va oud bilan chuqurlashadi, vanil esa yumshoq iz qoldiradi.", "prices": {"10": 250000, "20": 470000, "30": 680000, "50": 1050000, "100": 2000000}, "ing": ["zafaron", "charm", "amber", "oud", "vanil"]}, {"id": "olmazor", "name": "Olmazor", "gender": "uniseks", "notes": ["Yashil olma", "Bergamot", "Choy bargi", "Vetiver", "Oq mushk"], "desc": "Bahor ertalabidagi olma bog'i. Yashil olma va bergamotning tiniq ochilishi, choy bargi va vetiverning toza davomi. Har kuni sepish uchun.", "prices": {"10": 220000, "20": 410000, "30": 600000, "50": 950000, "100": 1800000}, "ing": ["yashil_olma", "bergamot", "choy_bargi", "vetiver", "oq_mushk"]}, {"id": "samarqand_oud", "name": "Samarqand Oud", "gender": "uniseks", "notes": ["Oud", "Atirgul", "Za'faron", "Sandal daraxti", "Ladan"], "desc": "Sharqona kechalar uchun. Oud va atirgulning klassik uyg'unligi za'faron bilan boyiydi, sandal va ladan uni ertangi kungacha olib boradi.", "prices": {"10": 300000, "20": 570000, "30": 820000, "50": 1280000, "100": 2450000}, "ing": ["oud", "atirgul", "zafaron", "sandal", "ladan"]}, {"id": "ipak_yoli", "name": "Ipak Yo'li", "gender": "ayol", "notes": ["Atirgul", "Iris", "Pion", "Mushk", "Kashmeran"], "desc": "Nozik va pudrali gulli atir. Atirgul, iris va pion ipakdek mayin mushk va kashmeran bilan yakunlanadi.", "prices": {"10": 250000, "20": 470000, "30": 680000, "50": 1050000, "100": 2000000}, "ing": ["atirgul", "iris", "pion", "oq_mushk", "kashmeran"]}, {"id": "oltin_kech", "name": "Oltin Kech", "gender": "uniseks", "notes": ["Asal", "Tamaki", "Tonka loviyasi", "Vanil", "Amber"], "desc": "Kuz oqshomining iliq nuri. Asal va tamaki bargining shirin-achchiq uyg'unligi tonka, vanil va amber bilan yumshaydi.", "prices": {"10": 250000, "20": 470000, "30": 680000, "50": 1050000, "100": 2000000}, "ing": ["asal", "tamaki", "tonka", "vanil", "amber"]}, {"id": "noir", "name": "Noir", "gender": "erkak", "notes": ["Qora murch", "Charm", "Pachuli", "Kedr", "Ambroksan"], "desc": "Qat'iy va sokin erkak atiri. Qora murch va charmning keskin ochilishi, pachuli va kedrning quruq yog'ochli bazasi.", "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1200000, "100": 2300000}, "ing": ["qora_murch", "charm", "pachuli", "kedr", "ambroksan"]}], "klassika": [{"name": "Symphony", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": "Jacques Cavallier Belletrud", "year": "2021", "gender": "uniseks", "notes": ["Greypfrut", "Bergamot", "Apelsin", "Yangi zanjabil"], "prices": {"10": 270000, "20": 520000, "30": 760000, "50": 1200000, "100": 2400000}, "desc": "Louis Vuitton Symphony – hashamat va musaffolik uyg’unligi. Yorqin sitrus, bergamot, greypfrut va yangi zanjabil uyg’unligi sizga kun bo’yi tetiklik, nafislik va unutilmas taassurot bag’ishlaydi. O’ziga ishongan insonlar uchun yaratilgan eksklyuziv hid", "id": "k1", "img": "img/klassika/1.jpg"}, {"name": "Imagination", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": "Jacques Cavallier Belletrud", "year": "2021", "gender": "erkak", "notes": ["Citron", "Kalabriya bergamoti", "Sitsiliya apelsini", "Tunisiya nerolisi", "Nigeriya zanjabili", "Seylon dolchini", "Xitoy qora choyi", "Guayak yog’ochi", "Olibanum (Ladan)", "Ambroksan"], "prices": {"10": 250000, "20": 480000, "30": 690000, "50": 1050000, "100": 2000000}, "desc": "Ambroksan", "id": "k2", "img": "img/klassika/2.jpg"}, {"name": "Gardenia", "brand": "Roja Parfums", "country": "Buyuk Britaniya", "perfumer": "Roja Dove", "year": null, "gender": "ayol", "notes": ["Oqart gul (Orange Blossom)", "Gardeniya", "Yasmin", "May atirguli", "Mimosa", "Binafsha", "Geliotrop", "Sandal daraxti", "Sadr yog’ochi", "Mushk", "Elemi smolasi", "Chinnigul (Clove)", "Shaftoli bargi", "Styraks"], "prices": {"10": 280000, "20": 540000, "30": 780000, "50": 1200000, "100": 2400000}, "desc": "Roja Gardenia — nafis, hashamatli va romantik gulli atir. Oqart gul va yasminning mayin jozibasi bergamotning yengil tetikligi bilan uyg‘unlashib, mushk, sandal va sadrning iliq bazasi bilan mukammal yakun topadi.", "id": "k3", "img": "img/klassika/3.jpg"}, {"name": "Montabaco Rio", "brand": "Ormonde Jayne", "country": "Buyuk Britaniya", "perfumer": "Geza Schön", "year": null, "gender": "uniseks", "notes": ["Neroli", "Lavanda", "Yasmin", "Geranium", "Apelsin guli", "Binafsha bargi"], "prices": {"10": 200000, "20": 380000, "30": 510000, "50": 750000, "100": 1300000}, "desc": "Montabaco Rio — tropik kayfiyat, hashamat va erkinlikni o’zida mujassam etgan zamonaviy uniseks atir. Yorqin sitrus notalari, nafis gullar va tamakining o’ziga xos jozibasi sandal, vetiver hamda amberning iliq ifori bilan uyg’unlashib, chuqur va unutilmas kompozitsiyani yaratadi. Har bir sepishda quyoshli Rio muhiti, nafislik va ishonch hissini baxsh etadi.", "id": "k4", "img": "img/klassika/4.jpg"}, {"name": "Tygar x Refik Anadol", "brand": "Bvlgari", "country": "Italiya", "perfumer": "Jacques Cavallier-Belletrud", "year": "2025 (Limited Edition)", "gender": "erkak", "notes": ["Ambroksan", "Mushk", "Vetiver", "Patchuli", "Ambrette (Mushk urug’i)"], "prices": {"10": 300000, "20": 570000, "30": 820000, "50": 1280000, "100": 2400000}, "desc": "Tygar x Refik Anadol — Bvlgari va raqamli rassom Refik Anadol hamkorligida yaratilgan cheklangan nashrdagi premium atir. Xushbo’y hid greypfrutning yorqin va tetiklashtiruvchi ochilishi bilan boshlanadi. Zanjabil va ambrette unga iliq hamda zamonaviy ohang bag’ishlaydi. Yakunda ambroksan, vetiver, mushk va patchuli uyg’unligi uzoq saqlanadigan, nafis va hashamatli iz qoldiradi. Bu atir kundalik foydalanish hamda maxsus tadbirlar uchun juda mos keladi", "id": "k5", "img": "img/klassika/5.jpg"}, {"name": "Miss Dior Parfum", "brand": "Dior", "country": "Fransiya", "perfumer": "Francis Kurkdjian", "year": null, "gender": "ayol", "notes": ["Mevali", "Amber", "Shirin", "Yerimsimon", "Patchulili", "Gulli", "Iliq ziravorli", "Oq gulli", "Sitrusli"], "prices": {"10": 120000, "20": 230000, "30": 340000, "50": 530000, "100": 980000}, "desc": "Miss Dior Parfum — nafislik va zamonaviy ayollik timsoli bo’lgan hashamatli fransuz atiri. U mandarin, shaftoli va o’rikning shirin-mevali ifori bilan ochilib, yurak qismida yovvoyi qulupnay hamda yaseminning romantik guldastasiga ulanadi. Yakunda patchuli, atlas kedri, amberwood va moxning iliq, chuqur hamda uzoq saqlanadigan izi atirga nafis va unutilmas xarakter bag’ishlaydi. Kundalik foydalanish hamda maxsus kechalar uchun ajoyib tanlovdir", "id": "k6", "img": "img/klassika/6.jpg"}, {"name": "Tilia", "brand": "Marc-Antoine Barrois", "country": "Fransiya", "perfumer": "Quentin Bisch", "year": null, "gender": "uniseks", "notes": ["Vetiver", "Ambroksan", "Georgywood (yog’ochsimon nota)", "Gulli", "Sitrusli"], "prices": {"10": 150000, "20": 290000, "30": 420000, "50": 650000, "100": 1200000}, "desc": "Tilia — Marc-Antoine Barrois’ning nafis va quyoshli kayfiyatni aks ettiruvchi hashamatli fransuz atiri. Ochilishida bergamotning tetiklantiruvchi sitrus nafasi seziladi. Yuragida lipa gulining mayin asalimsimon ifori, yasemin va geliotrop bilan uyg’unlashib, iliq va nafis guldasta yaratadi. Yakunda vetiver, ambroksan va yog’ochsimon notalar atirga zamonaviy, toza va uzoq saqlanadigan iz bag’ishlaydi", "id": "k7", "img": "img/klassika/7.jpg"}, {"name": "Gritti Tutù", "brand": "Gritti Venetia", "country": "Italiya", "perfumer": "Luca Gritti", "year": null, "gender": "ayol", "notes": ["Greypfrut", "Limon", "Qora smorodina", "Hindiston yong’og’i"], "prices": {"10": 150000, "20": 290000, "30": 420000, "50": 650000, "100": 1200000}, "desc": "Gritti Tutù Extrait de Parfum — ayollik, nafislik va hashamatni o’zida mujassam etgan premium italyan atiri. Xushbo’y hid greypfrut, limon va qora smorodinaning tetiklantiruvchi mevali uyg’unligi bilan ochiladi. Yurak qismida atirgul, yasemin va oq gullarning nafis guldastasi romantik kayfiyat bag’ishlaydi. Yakunda vanil, mushk, kashmir yog’ochi va amberning iliq, shirin hamda uzoq saqlanadigan izi atirga unutilmas joziba beradi", "id": "k8", "img": "img/klassika/8.jpg"}, {"name": "GABA (This is not GABA)", "brand": "GABA Perfumes", "country": "Shvetsariya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Lavanda", "Muskat shalfeyi (Clary Sage)", "Kardamon", "Sadr yog‘ochi", "Vetiver", "Ambra", "Mushk"], "prices": {"10": 200000, "20": 380000, "30": 550000, "50": 850000, "100": 1600000}, "desc": "GABA — zamonaviy, toza va nafis hidga ega uniseks atir. Ochilishida sitruslarning yorqin va tetiklantiruvchi ifori seziladi. Keyinchalik lavanda va ziravorli kardamon bilan yanada nafis tus oladi. Yakunda esa ambra, mushk va yog’ochsimon notalar iliq, uzoq saqlanadigan va hashamatli iz qoldiradi. Kundalik foydalanish hamda barcha fasllar uchun mos, o’ziga ishongan insonlar tanlovi.", "id": "k9", "img": "img/klassika/9.jpg"}, {"name": "Black Phantom", "brand": "Kilian Paris", "country": "Fransiya", "perfumer": null, "year": "2017", "gender": "uniseks", "notes": ["Rom", "Shakarqamish", "Qora shokolad", "Qahva", "Bodom", "Heliotrop", "Karamel", "Vanil", "Sandal daraxti", "Patchouli", "Vetiver"], "prices": {"10": 300000, "20": 570000, "30": 820000, "50": 1280000, "100": 2440000}, "desc": "Black Phantom by Kilian — shirin, sirli va hashamatli xarakterga ega uniseks atir. Rom va qahvaning boy uyg‘unligi qora shokolad va karamel bilan birlashib, iliq va jozibali hid yaratadi. Vanil, sandal va patchouli esa unga uzoq saqlanuvchi, chuqur va nafis yakun beradi.", "id": "k10", "img": "img/klassika/10.jpg"}, {"name": "Hanuman", "brand": "Boadicea the Victorious", "country": "Buyuk Britaniya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Limon", "Mandarin", "Greypfrut", "Amber", "Vanil", "Tonka loviyasi"], "prices": {"10": 550000, "20": 1050000, "30": 1500000, "50": 2350000, "100": 4500000}, "desc": "Hanuman — yorqin sitrus ochilishi va iliq yog‘ochsimon yakuni bilan ajralib turadigan hashamatli uniseks atir. Dastlab bergamot va mandarinning tetiklantiruvchi hidi seziladi, keyinchalik lavanda va gullarning nafis uyg‘unligi namoyon bo‘ladi. Yakunda esa sandal, mushk va amber notalari chuqur, iliq va uzoq saqlanuvchi iz qoldiradi.", "id": "k11", "img": "img/klassika/11.jpg"}, {"name": "Bleu de Chanel", "brand": "Chanel", "country": "Fransiya", "perfumer": "Jacques Polge", "year": "2010", "gender": "erkak", "notes": ["Sandal daraxti", "Kedr", "Vetiver", "Patchouli", "Labdanum", "Oq mushk", "Ambroksan"], "prices": {"10": 150000, "20": 280000, "30": 390000, "50": 600000, "100": 1150000}, "desc": "Ambroksan", "id": "k12", "img": "img/klassika/12.jpg"}, {"name": "Wood Sage & Sea Salt", "brand": "Jo Malone London", "country": "Buyuk Britaniya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Ambrette urug‘i", "Dengiz tuzi", "Shalfey (Sage)"], "prices": {"10": 180000, "20": 340000, "30": 490000, "50": 780000, "100": 1500000}, "desc": "Wood Sage & Sea Salt — dengiz sohilining toza havosi va tabiiy yog‘och hididan ilhomlangan uniseks atir. Yengil, nafis va zamonaviy hid bo‘lib, tozalik, erkinlik va tabiiylikni yoqtiradiganlar uchun ajoyib tanlov. Kundalik foydalanish va issiq fasllar uchun juda mos.", "id": "k13", "img": "img/klassika/13.jpg"}, {"name": "Attrape-Rêves", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Lichi", "Bergamot", "Zanjabi", "Kakao", "Pachuli"], "prices": {"10": 320000, "20": 610000, "30": 880000, "50": 1370000, "100": 2650000}, "desc": "Attrape-Rêves (“Tush tutuvchi”) — Louis Vuitton’ning nafis va hashamatli ayollar atiri. Yorqin mevali va gul ifori iliq kakao hamda pachuli bilan uyg‘unlashib, romantik, jozibali va unutilmas hid yaratadi. Kunduz ham, kechki tadbirlar uchun ham juda mos.", "id": "k14", "img": "img/klassika/14.jpg"}, {"name": "Afternoon Swim", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Sitrus", "Yangi", "Toza", "Mevali", "Mushkli", "Yengil aromatik"], "prices": {"10": 270000, "20": 510000, "30": 740000, "50": 1150000, "100": 2200000}, "desc": "Afternoon Swim — yoz faslining iliq kuni va O‘rta yer dengizi sohilidan ilhomlangan yorqin sitrus atiri. Toza, tetiklantiruvchi va energiyaga boy hid bo‘lib, erkaklar ham, ayollar ham foydalanishi mumkin (uniseks). Issiq ob-havo va kundalik foydalanish uchun ajoyib tanlov.", "id": "k15", "img": "img/klassika/15.jpg"}, {"name": "Aqua Sapphire", "brand": "Boadicea the Victorious", "country": "Buyuk Britaniya", "perfumer": null, "year": "2021", "gender": "uniseks", "notes": ["Sandal daraxti", "Mox (Oakmoss)", "Nagarmotha (Cypriol)", "Amber", "Vanil"], "prices": {"10": 400000, "20": 780000, "30": 1140000, "50": 1800000, "100": 3500000}, "desc": "Aqua Sapphire — dengiz shabadalaridan ilhomlangan hashamatli niche atir. U ochilishida ananas, rom va za’faronning yorqin uyg’unligi bilan e’tiborni tortadi. Yurak qismida nafis May atirguli va mushk kompozitsiyaga nafislik bag’ishlaydi. Yakunda esa sandal daraxti, amber, vanil va mox iliq, chuqur hamda uzoq saqlanuvchi iz qoldiradi. Yangi, dengizsimon, yog‘ochsimon va biroz shirin xarakteri tufayli ayniqsa bahor va yoz fasllari uchun juda mos keladi.", "id": "k16", "img": "img/klassika/16.jpg"}, {"name": "Guidance", "brand": "Amouage", "country": "Ummon (Oman)", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Yog‘ochsimon", "Gulli", "Mevali", "Vanilli", "Kahrabo (Amber)", "Balzamik", "Yong‘oqsimon", "Pudrali", "Iliq ziravorli"], "prices": {"10": 250000, "20": 470000, "30": 680000, "50": 1050000, "100": 2000000}, "desc": "Iliq ziravorli", "id": "k17", "img": "img/klassika/17.jpg"}, {"name": "Spring Flower", "brand": "Creed", "country": "Fransiya", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Mevali", "Gulli", "Sitrusli", "Mushkli", "Yog‘ochsimon", "Yangi (Fresh)", "Kahrabosimon"], "prices": {"10": 300000, "20": 570000, "30": 820000, "50": 1280000, "100": 2450000}, "desc": "Yangi (Fresh)", "id": "k18", "img": "img/klassika/18.jpg"}, {"name": "Erba Gold", "brand": "Xerjoff", "country": "BAA emas — Italiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Limon", "Bergamot", "Yashil olma", "Yalpiz", "Mevali notalar", "Dolchin", "Chinnigul", "Oq mushk", "Amber", "Pachuli"], "prices": {"10": 200000, "20": 380000, "30": 550000, "50": 850000, "100": 1600000}, "desc": "Turi: Uniseks, shirin-mevali va iliq xarakterdagi atir", "id": "k19", "img": "img/klassika/19.jpg"}, {"name": "Y", "brand": "Yves Saint Laurent", "country": "Fransiya", "perfumer": null, "year": null, "gender": "erkak", "notes": ["Bergamot", "Zanjabil", "Adaçayı", "Archa rezavorlari", "Amberwood", "Kedr", "Vetiver"], "prices": {"10": 150000, "20": 290000, "30": 420000, "50": 650000, "100": 1200000}, "desc": "YSL Y — yangi, toza va zamonaviy hid", "id": "k20", "img": "img/klassika/20.jpg"}, {"name": "Chimilka", "brand": "Vilhelm Parfumerie", "country": "AQSh (brend Nyu-Yorkda tashkil topgan)", "perfumer": null, "year": "2025", "gender": "uniseks", "notes": ["Amber", "Indoneziya patchouli", "Pushti shakar", "Musk"], "prices": {"10": 200000, "20": 380000, "30": 550000, "50": 850000, "100": 1600000}, "desc": "Chimilka — shirin shaftoli va mandarinning yorqin ochilishi, keyin esa charm, za’faron va gullarning sirli uyg‘unligi bilan davom etadigan, iliq va jozibali atir. Amber, pushti shakar va musk esa yakunda yumshoq, shirin va uzoq saqlanadigan taassurot qoldiradi.", "id": "k21", "img": "img/klassika/21.jpg"}, {"name": "Isola Snow", "brand": "Roja Parfums", "country": "Buyuk Britaniya, London", "perfumer": null, "year": "2025", "gender": "uniseks", "notes": ["Kardamon", "Ravoch (Rhubarb)", "Kiparis", "Sandal daraxti", "Musk", "Cashmeran", "Rosewood", "Ambroxan", "Orris", "Amber Xtreme"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Ambroxan", "id": "k22", "img": "img/klassika/22.jpg"}, {"name": "Torino25", "brand": "Xerjoff", "country": "Italiya — Turin shahrida tashkil topgan", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Vetiver", "Amber", "Musk", "Charm", "Archa mevasi (Juniper)", "Zamsha (Suede)"], "prices": {"10": 300000, "20": 570000, "30": 820000, "50": 1280000, "100": 2450000}, "desc": "Torino25 — kuchli, zamonaviy va hashamatli hid. Dastlab sitrus va ziravorlarning tetikligi seziladi, keyin yumshoq zamsha va charm paydo bo‘ladi. Amber va musk esa atirga iliq, chuqur va uzoq saqlanuvchi yakun beradi.", "id": "k23", "img": "img/klassika/23.jpg"}, {"name": "Power of You", "brand": "Giorgio Armani", "country": "Italiya", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Madagaskar vanili 🍨", "benzoin 🌿", "ladan 🤎", "Frangipani 🌺", "quyoshli akkord ☀️"], "prices": {"10": 150000, "20": 290000, "30": 420000, "50": 650000, "100": 1200000}, "desc": "Yo‘nalishi: Fruity Gourmand — mevali, shirin va iliq vanilli.", "id": "k24", "img": "img/klassika/24.jpg"}, {"name": "Oud Wood", "brand": "Tom Ford", "country": "AQSh", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Pushti qalampir", "Kardamon", "Oud (agar yog‘ochi)", "Sandal daraxti", "Vetiver", "Pachuli", "Tonka loviya", "Amber"], "prices": {"10": 270000, "20": 510000, "30": 740000, "50": 1150000, "100": 2200000}, "desc": "Oud Wood — chuqur, nafis va juda jozibali yog‘ochli atir. Oud, sandal daraxti va vetiver unga sirli va boy xarakter beradi, kardamon va pushti qalampir esa iliq ziravorli ohang qo‘shadi. Tonka loviya va amber kompozitsiyani yumshoq, iliq va uzoq saqlanadigan taassurot bilan yakunlaydi.", "id": "k25", "img": "img/klassika/25.jpg"}, {"name": "Althaïr", "brand": "Parfums de Marly", "country": "Fransiya", "perfumer": null, "year": null, "gender": "erkak", "notes": ["Bergamot", "Mandarin", "Elemi", "Apelsin guli", "Dolchin", "Kardamon", "Bourbon vanili", "Gaiac daraxti", "Praline"], "prices": {"10": 220000, "20": 410000, "30": 620000, "50": 950000, "100": 1750000}, "desc": "Nomi: Althaïr Eau de Parfum", "id": "k26", "img": "img/klassika/26.jpg"}, {"name": "Pink Molécule 090.09", "brand": "Zarkoperfume", "country": "Daniya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["O‘rik", "Qora buzina guli (Elderflower)", "Qora orkide", "Ko‘pirtirilgan qaymoq", "Mahogani daraxti", "Qora yog‘och akkordi"], "prices": {"10": 120000, "20": 230000, "30": 340000, "50": 530000, "100": 980000}, "desc": "Pink Molécule 090.09 — Skandinaviya tabiatining nafisligi va pushti shampanning mayin, jozibali kayfiyatini birlashtirgan zamonaviy atir. Dastlab mevali va shampanli yengil taassurot beradi, keyin esa qaymoqsimon, gulga boy va yog‘ochli baza bilan iliq hamda o‘ziga tortuvchi hid qoldiradi.", "id": "k27", "img": "img/klassika/27.jpg"}, {"name": "Devil’s Intrigue", "brand": "HFC", "country": "Fransiya", "perfumer": null, "year": "2018-yil", "gender": "ayol", "notes": ["Oq choy", "Osmanthus", "Apelsin guli", "Sandal daraxti", "Vanil", "Cashmeran", "Yog‘ochli notalar"], "prices": {"10": 220000, "20": 410000, "30": 620000, "50": 950000, "100": 1750000}, "desc": "Devil’s Intrigue — nafis, sirli va jozibali hid. Oq choy va osmanthus bilan mayin ochilib, yurak qismida apelsin guli va sandal daraxtining iliq uyg‘unligiga o‘tadi. Vanil, cashmeran va yog‘ochli notalar esa yumshoq, iliq va uzoq qoluvchi iz qoldiradi. 🌸", "id": "k28", "img": "img/klassika/28.jpg"}, {"name": "Love Hibiscus", "brand": "Amouage", "country": "Ummon", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Hibiskus", "Atirgul", "Vanil", "Qizil mevalar", "Sitrus mevalar", "Mushk", "Sandal daraxti", "Amber", "Yashil akkordlar"], "prices": {"10": 270000, "20": 520000, "30": 760000, "50": 1200000, "100": 2400000}, "desc": "Yorqin, shirin va nafis gul iforiga ega. Tropik mevalar va hibiskusning shirali ohangi vanil, mushk va iliq amber bilan uyg‘unlashib, juda jozibali va hashamatli taassurot qoldiradi.", "id": "k29", "img": "img/klassika/29.jpg"}, {"name": "Musc Nurasana", "brand": "Maison Crivelli", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Pushti qalampir", "Mushk", "Zanjabil", "Ambroksan", "Oqartirilgan yog‘och notalari", "Iris", "Yashil aksentlar", "Pachuli", "Vanil"], "prices": {"10": 370000, "20": 690000, "30": 960000, "50": 1550000, "100": 2950000}, "desc": "Nozik, muskusli va zamonaviy hid. Sitrusning yangi ohangi, zanjabil va pushti qalampirning biroz achchiq notalari mushk, ambroksan va vanil bilan uyg‘unlashadi. Nafis, toza va uzoq saqlanadigan ifor.", "id": "k30", "img": "img/klassika/30.jpg"}, {"name": "Météore", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "erkak", "notes": ["Bergamot", "Pushti qalampir", "Vetiver", "Yashil aromatik notalar", "Dengiz/mineral akkordlar", "Yog‘ochsimon notalar", "Ambroksan"], "prices": {"10": 270000, "20": 520000, "30": 760000, "50": 1200000, "100": 2400000}, "desc": "Ambroksan", "id": "k31", "img": "img/klassika/31.jpg"}, {"name": "Himalaya", "brand": "Creed", "country": "Fransiya", "perfumer": null, "year": null, "gender": "erkak", "notes": ["Bergamot", "Limon", "Mandarin", "Archa mevasi (Juniper berry)", "Qalampir", "Muskat yong‘og‘i", "Porox akkordi", "Sandal daraxti", "Vetiver", "Kedr daraxti", "Mushk"], "prices": {"10": 270000, "20": 520000, "30": 760000, "50": 1200000, "100": 2400000}, "desc": "Himalaya — tog‘ havosidek toza, salqin va tetiklantiruvchi hid. Sitrus notalari yorqin ochiladi, yurak qismida archa mevasi, qalampir va o‘ziga xos porox akkordi paydo bo‘ladi. Yog‘ochsimon baza esa hidga chuqurlik va erkakona xarakter beradi.", "id": "k32", "img": "img/klassika/32.jpg"}, {"name": "Bergamask", "brand": "Orto Parisi", "country": "Italiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Limon", "Lavanda", "Apelsin guli", "Landish", "Mushk", "Kedr daraxti", "Tonka loviyasi"], "prices": {"10": 270000, "20": 520000, "30": 760000, "50": 1200000, "100": 2400000}, "desc": "Bergamask — juda kuchli va o‘ziga xos sitrus-muskli atir. Dastlab bergamot va limonning yorqin, tetik hidlari seziladi. Keyinchalik lavanda va oq gullar paydo bo‘lib, oxirida mushk, kedr va tonka iliq va uzoq saqlanadigan iz qoldiradi.", "id": "k33", "img": "img/klassika/33.jpg"}, {"name": "Myriad", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Atirgul", "Yasmin", "Lavanda", "Apelsin gullari", "Ambra", "Vanil", "Sandal daraxti"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Nafis, zamonaviy va romantik hid. Myriad atirgul va yasminning mayin gulli ohanglarini iliq ambra va vanilning shirinligi bilan uyg‘unlashtiradi. Hashamatli, jozibali va uzoq saqlanadigan taassurot qoldiruvchi kompozitsiya.", "id": "k34", "img": "img/klassika/34.jpg"}, {"name": "Matsukita", "brand": "Clive Christian", "country": "Angliya  Buyuk Britaniya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Yangi achchiq apelsin", "Bergamot", "Lavanda", "Zambak", "Yasmin", "Amber", "Sandal daraxti", "Mushk", "Vetiver", "Tonka loviya"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Matsukita — nafis, yorqin va hashamatli kompozitsiya. Tsitrus notalarining tetikligi gul va aromatik akkordlar bilan uyg‘unlashib, iliq amber va yog‘ochli ohanglar bilan yakunlanadi. O‘ziga xos, jozibali va aristokratik taassurot qoldiradi.", "id": "k35", "img": "img/klassika/35.jpg"}, {"name": "Telea", "brand": "Tiziana Terenzi", "country": "Italiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Greypfrut", "Limon", "Qalampir", "Musk", "Sandal daraxti", "Ambergris", "Vetiver", "Tonka loviya"], "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1200000, "100": 2400000}, "desc": "Telea — yorqin, tetiklantiruvchi va hashamatli hid. Tsitrus notalarining yangi va shirali ochilishi ziravorlar hamda nafis gullar bilan uyg‘unlashadi. Musk, sandal daraxti va ambergris esa kompozitsiyaga iliq, chuqur va jozibali yakun beradi", "id": "k36", "img": "img/klassika/36.jpg"}, {"name": "E Cashmere Musk", "brand": "Clive Christian", "country": "Angliya (Buyuk Britaniya)", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Yasmin", "Atirgul", "Ambra", "Paxta mushki", "Vanil", "Sandal daraxti", "Vetiver", "Tonka loviya"], "prices": {"10": 550000, "20": 1050000, "30": 1500000, "50": 2350000, "100": 4500000}, "desc": "E Cashmere Musk — nafis, iliq va juda jozibali hid. Yumshoq mushk va vanilning mayinligi amber hamda sandal daraxtining iliq ohanglari bilan uyg‘unlashib, hashamatli va shinam taassurot yaratadi. Gulli va yog‘ochli aksentlari tufayli kundalik foydalanishdan tortib, maxsus kechalargacha mos keladigan elegant kompozitsiya.", "id": "k37", "img": "img/klassika/37.jpg"}, {"name": "My Way", "brand": "Giorgio Armani", "country": "Italiya", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Oq gullar", "Vanil"], "prices": {"10": 120000, "20": 230000, "30": 340000, "50": 530000, "100": 980000}, "desc": "My Way — juda mashhur, nafis va gullarga boy ayollar parfumi. Oqartirilgan gullar va vanil uyg‘unligi bilan romantik va zamonaviy hid.", "id": "k38", "img": "img/klassika/38.jpg"}, {"name": "Stellar Times", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Amber"], "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1250000, "100": 2400000}, "desc": "Stellar Times — yorqin, oltinsimon amberli va hashamatli niche parfum. Juda boy va o‘ziga tortuvchi, premium segment muxlislari uchun ideal tanlov.", "id": "k39", "img": "img/klassika/39.jpg"}, {"name": "Fantasmagory", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Jasmin", "Yashil nok", "Amber", "Sitrus", "Sandal daraxti", "Atirgul", "Musk"], "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1250000, "100": 2400000}, "desc": "Musk", "id": "k40", "img": "img/klassika/40.jpg"}, {"name": "Ambre Levant", "brand": "Louis Vuitton", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Lavanda", "Yasmin", "Qora murch", "Amber", "Sandal daraxti", "Vanil", "Mushk"], "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1250000, "100": 2400000}, "desc": "Ambre Levant — sharqona nafislik va hashamatni o‘zida mujassam etgan, iliq va jozibali iforga ega atir. Bergamotning tetikligi lavandaning mayinligi bilan uyg‘unlashib, amber, vanil va sandal daraxtining iliq, boy ifori bilan davom etadi.", "id": "k41", "img": "img/klassika/41.jpg"}, {"name": "Aventus for Her", "brand": "Creed", "country": "Fransiya", "perfumer": null, "year": null, "gender": "ayol", "notes": ["Bergamot", "Qora smorodina", "Yasmin", "Atirgul", "Ananas", "Yog‘ochli notalar", "Mushk", "Vanil", "Amber"], "prices": {"10": 270000, "20": 520000, "30": 750000, "50": 1250000, "100": 2400000}, "desc": "Creed Aventus for Her — nafislik, joziba va o‘ziga ishonchni ifodalovchi hashamatli ayollar atiri. Mevali va gulli notalarning uyg‘unligi unga yorqin, zamonaviy va esda qolarli xarakter bag‘ishlaydi. Qora smorodinaning shirali ifori, atirgulning nozikligi va yog‘ochsimon notalarning iliq ohangi o‘ziga xos kompozitsiyani yaratadi.", "id": "k42", "img": "img/klassika/42.jpg"}, {"name": "1872 Masculine", "brand": "Clive Christian", "country": "Buyuk Britaniya", "perfumer": null, "year": null, "gender": "erkak", "notes": ["Bergamot", "Lavanda", "Yashil akordlar", "Qora murch", "Yog‘ochli notalar", "Ambergris", "Vetiver", "Mushk"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Clive Christian 1872 Masculine — erkaklar uchun yaratilgan hashamatli, nafis va o‘ziga xos atir. Bergamotning tetik sitrus ifori lavandaning mayinligi va yashil akordlarning tabiiyligi bilan uyg‘unlashadi. Qora murch kompozitsiyaga ega", "id": "k43", "img": "img/klassika/43.jpg"}, {"name": "Sea My Love", "brand": "Stéphane Humbert Lucas 777", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Yasmin", "Dengiz notalari", "Qizil qalampir", "Amber", "Sandal daraxti"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Sea My Love — dengiz shabadasining tetikligi va nafislikni o‘zida mujassam etgan jozibali atir. Bergamotning sitrusli ifori yasminning nozik gulli ohanglari bilan uyg‘unlashadi. Dengiz notalari yangilik va yengillik hissini uyg‘otsa, amber, sandal daraxti va vanil kompozitsiyaga iliqlik bagishlaydi", "id": "k44", "img": "img/klassika/44.jpg"}, {"name": "Tobacco Carnival", "brand": "Maison Crivelli", "country": "Fransiya", "perfumer": null, "year": null, "gender": "uniseks", "notes": ["Bergamot", "Tamaki", "Yasmin", "Qora murch", "Amber", "Sandal daraxti", "Vanil"], "prices": {"10": 370000, "20": 690000, "30": 990000, "50": 1550000, "100": 2950000}, "desc": "Tobacco Carnival — o‘ziga xos, chuqur va jozibali iforga ega hashamatli atir. Bergamotning tetikligi tamakining boy va iliq ifori bilan uyg‘unlashib, yasminning nafisligi hamda qora murchning ziravorli ohangi bilan yanada ochiladi.", "id": "k45", "img": "img/klassika/45.jpg"}], "settings": {"delivery": {"pickup": {"label": "Do'kondan olib ketish", "price": 0}, "city": {"label": "Toshkent bo'ylab kuryer", "price": 30000}, "region": {"label": "Viloyatga (BTS)", "price": 35000}}, "bottles": [{"id": "standart", "name": "Standart flakon", "note": "Narxga kiradi", "price": 0, "min": 0}, {"id": "premium", "name": "Maleton idishi", "note": "Yashil shisha, oltin qopqoq", "price": 40000, "min": 30}, {"id": "refil", "name": "O'z flakonim", "note": "Refil: flakonni olib kelasiz", "price": 0, "min": 0}], "gifts": {"namuna": 150000, "sertifikat": [300000, 500000, 1000000, 2000000]}}}</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const SIZES = ['10','20','30','50','100'];
+// Yetkazish narxlari (vaqtinchalik, keyin tahrirlanadi)
+const S = D.settings || {};
+// Yetkazish narxlari sozlamalar.json dan olinadi
+const DELIVERY = S.delivery || { pickup:{label:"Do'kondan olib ketish", price:0}, city:{label:'Toshkent bo\u02bbylab kuryer', price:30000}, region:{label:'Viloyatga (BTS)', price:35000} };
+const BOTTLES = S.bottles || [{id:'standart', name:'Standart flakon', note:'Narxga kiradi', price:0, min:0}];
+const bById = Object.fromEntries(BOTTLES.map(b=>[b.id,b]));
+const bPrice = (id, ml) => { const b = bById[id]; return b && +ml >= (b.min||0) ? b.price : 0; };
+const REGIONS = ['Andijon','Buxoro','Fargʻona','Jizzax','Xorazm','Namangan','Navoiy','Qashqadaryo','Qoraqalpogʻiston','Samarqand','Sirdaryo','Surxondaryo','Toshkent viloyati'];
+const FAM = [
+  ['sitrus','Sitrus va yangi',/bergamot|limon|apelsin|greypfrut|mandarin|sitrus|citron|neroli|olma|yalpiz|dengiz|tuz|yangi|choy|zanjabil|ravoch|tsitrus/i],
+  ['gulli','Gulli',/gul|yasmin|yasemin|jasmin|atirgul|gardeniya|binafsha|iris|mimosa|osmanthus|hibiskus|zambak|landish|geranium|frangipani|pion|magnoliya|orris|lichi|geliotrop|heliotrop/i],
+  ['yogoch','Yogʻochli',/sandal|kedr|sadr|vetiver|yog.och|gaiac|guayak|pachuli|patchouli|mox|kiparis|georgywood|cashmeran|kashmeran|rosewood|mahogani/i],
+  ['sharq','Sharqona va amber',/amber|ambra|kahrabo|oud|ud |agar|ladan|olibanum|za.faron|tamaki|charm|labdanum|benzoin|zamsha|ambergris|styraks|elemi/i],
+  ['shirin','Shirin',/vanil|karamel|shokolad|praline|tonka|shakar|qaymoq|rom|asal|kakao|qahva|bodom|hindiston|shirin|mevali|marakuya|o.rik|shaftoli|ananas|smorodina/i]
+];
+const GENDERS = [['all','Hammasi'],['erkak','Erkaklar'],['ayol','Ayollar'],['uniseks','Uniseks']];
+
+// ---- normalise products
+const P = [];
+D.originals.forEach(o => P.push({...o, kind:'orig', brand:'Maleton', img:'img/originals/'+o.id+'.webp', order:999}));
+const ING = n => 'img/notes/'+n+'.webp';
+const stage = (p, open) => `<div class="stage${open?' open':''}">${(p.ing||[]).map((n,i)=>`<img class="ing" src="${ING(n)}" alt="" loading="lazy">`).join('')}<img class="bottle" src="${p.img}" alt="Maleton ${esc(p.name)} idishi"></div>`;
+const qadd = p => `<button class="qadd" type="button" data-add="${p.id}" aria-label="${esc(p.name)}, 20 ml savatga"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h2l2.2 10.4a1.5 1.5 0 0 0 1.5 1.1h8.6a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/><path d="M13 9.5v4M11 11.5h4"/></svg></button>`;
+const thumb = p => p.kind==='orig' ? ' class="thumbbg"' : '';
+D.klassika.forEach((k,i) => P.push({...k, kind:'klas', order:i}));
+P.forEach(p => {
+  const txt = (p.notes||[]).join(' ') + ' ' + (p.desc||'');
+  const nt = (p.notes||[]).join(' ');
+  p.fam = FAM.filter(f => f[2].test(nt) || f[2].test(txt)).map(f => f[0]);
+  // primary family = strongest match on notes only
+  const score = FAM.map(f => ({k:f[0], n:(p.notes||[]).filter(x => f[2].test(x)).length}));
+  score.sort((a,b)=>b.n-a.n); p.main = score[0].n ? score[0].k : (p.fam[0]||'');
+  p.from = p.prices['20'] || p.prices['10']*2;
+});
+const KL = P.filter(p => p.kind==='klas');
+const maxOrder = Math.max(...KL.map(p=>p.order));
+const byId = Object.fromEntries(P.map(p => [p.id, p]));
+
+// ---- helpers
+const $ = s => document.querySelector(s);
+const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ') + " soʻm";
+const gLabel = g => ({erkak:'Erkaklar uchun',ayol:'Ayollar uchun',uniseks:'Uniseks'}[g]||'');
+const famLabel = k => (FAM.find(f=>f[0]===k)||[])[1]||'';
+const store = { get(k,d){ try{ const v=localStorage.getItem(k); return v?JSON.parse(v):d; }catch(e){ return d; } }, set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} } };
+let toastT; function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),2200); }
+function copyText(txt, btn){ const done=()=>{ if(btn){ const o=btn.textContent; btn.textContent='Nusxalandi'; setTimeout(()=>btn.textContent=o,1500);} }; try{ navigator.clipboard.writeText(txt).then(done,()=>{ toast(txt); }); }catch(e){ toast(txt); } }
+
+// ---- originals
+$('#origGrid').innerHTML = P.filter(p=>p.kind==='orig').map(p => `
+  <div class="ocard">
+    <a href="#atir-${p.id}" style="position:relative">${stage(p,false)}<span class="tag">Faqat Maleton</span></a>
+    <div class="body">
+      <a href="#atir-${p.id}"><h3>${esc(p.name)}</h3></a>
+      <div class="notes">${esc(p.notes.slice(0,3).join(' · '))}</div>
+      <div class="foot"><span class="price num">${fmt(p.from)} <small>20 ml dan</small></span>${qadd(p)}</div>
+    </div>
+  </div>`).join('');
+
+
+// ---- reels: video fayllar img/reels/ papkasiga qo'yiladi va shu ro'yxatga yoziladi
+const REELS = [
+  {name:'Yigitali Mamajonov', role:'Aktyor', video:'img/reels/yigitali.mp4', poster:'img/reels/yigitali.webp'},
+  {name:'Doniyor Go\u02bbipov', role:'Xonanda, prodyuser', video:'img/reels/doniyor.mp4', poster:'img/reels/doniyor.webp'},
+  {name:'Islom Qoraboyev', role:'Teleboshlovchi', video:'img/reels/islom.mp4', poster:'img/reels/islom.webp'},
+  {name:'Shaxzod Sutonov', role:'Aktyor', video:'img/reels/shaxzod.mp4', poster:'img/reels/shaxzod.webp'}
+];
+const PLAY = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+$('#reels').innerHTML = REELS.map((r,i) => `<button class="reel" type="button" data-reel="${i}" aria-label="${esc(r.name)} videosini ko'rish">
+  <span class="lab">Mehmonimiz</span>
+  <img class="pb" src="${r.poster}" alt="" loading="lazy">
+  <span class="shade"></span><span class="play">${PLAY}</span>
+  <span class="who"><b>${esc(r.name)}</b><span>${esc(r.role)}</span></span></button>`).join('');
+$('#reels').addEventListener('click', e => {
+  const el = e.target.closest('[data-reel]'); if (!el || el.classList.contains('playing')) return;
+  const r = REELS[+el.dataset.reel];
+  if (!r.video) { toast("Bu video hali yuklanmagan"); return; }
+  document.querySelectorAll('.reel.playing video').forEach(v => v.pause());
+  el.classList.add('playing');
+  el.insertAdjacentHTML('beforeend', `<video src="${r.video}" poster="${r.poster}" controls autoplay playsinline></video>`);
+});
+
+// ---- catalog
+const PAGE = 8;
+const st = { q:'', g:'all', f:'', sort:'new', limit:PAGE };
+function chipRow(el, items, key){
+  el.innerHTML = items.map(([v,l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${st[key]===v}">${l}</button>`).join('');
+  el.onclick = e => { const b=e.target.closest('.chip'); if(!b) return; st[key] = (key==='f' && st.f===b.dataset.v) ? '' : b.dataset.v; st.limit = PAGE; chipRow(el, items, key); renderGrid(); };
+}
+chipRow($('#fGender'), GENDERS, 'g');
+chipRow($('#fFamily'), FAM.map(f=>[f[0],f[1]]), 'f');
+$('#q').addEventListener('input', e => { st.q = e.target.value.trim().toLowerCase(); st.limit = PAGE; renderGrid(); });
+$('#sort').addEventListener('change', e => { st.sort = e.target.value; renderGrid(); });
+function card(p){
+  return `<div class="pcard">
+    <a class="ph" href="#atir-${p.id}"><img src="${p.img}" alt="${esc(p.name)}" loading="lazy" width="720" height="900">${p.kind==='klas' && maxOrder-p.order<5?'<span class="new">Yangi</span>':''}</a>
+    <div class="body"><a href="#atir-${p.id}"><h3>${esc(p.name)}</h3></a><div class="brand">${esc(p.brand)} ilhomida · ${esc({erkak:'Erkak',ayol:'Ayol',uniseks:'Uniseks'}[p.gender])}</div>
+    <div class="foot"><span class="price num">${fmt(p.from)} <small>20 ml dan</small></span>${qadd(p)}</div></div></div>`;
+}
+function renderGrid(){
+  let L = KL.filter(p => (st.g==='all' || p.gender===st.g) && (!st.f || p.fam.includes(st.f)));
+  if (st.q) L = L.filter(p => (p.name+' '+p.brand+' '+p.notes.join(' ')).toLowerCase().includes(st.q));
+  const s = {new:(a,b)=>b.order-a.order, asc:(a,b)=>a.from-b.from, desc:(a,b)=>b.from-a.from, az:(a,b)=>a.name.localeCompare(b.name)}[st.sort];
+  L.sort(s);
+  $('#count').textContent = L.length + ' ta atir';
+  const left = L.length - st.limit;
+  $('#more').hidden = left <= 0;
+  $('#more').textContent = `Ko'proq ko'rish (yana ${left} ta)`;
+  $('#grid').innerHTML = L.length ? L.slice(0, st.limit).map(card).join('') : `<div class="empty" style="grid-column:1/-1">Bu filtr bo'yicha atir topilmadi. Qidiruvni qisqartiring yoki filtrni olib tashlang.</div>`;
+}
+$('#more').onclick = () => { st.limit += PAGE * 2; renderGrid(); };
+renderGrid();
+
+// ---- advisor
+const aq = { gender:'any', family:'shirin', budget:'any' };
+const AQ = {
+  gender: [['any',"Farqi yo'q"],['erkak','Erkak'],['ayol','Ayol'],['uniseks','Uniseks']],
+  family: FAM.map(f=>[f[0],f[1]]),
+  budget: [['300',"300 minggacha"],['550',"550 minggacha"],['any',"Muhim emas"]]
+};
+document.querySelectorAll('[data-q]').forEach(el => {
+  const k = el.dataset.q;
+  const draw = () => el.innerHTML = AQ[k].map(([v,l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${aq[k]===v}">${l}</button>`).join('');
+  draw();
+  el.onclick = e => { const b=e.target.closest('.chip'); if(!b) return; aq[k]=b.dataset.v; draw(); advise(); };
+});
+function advise(){
+  const res = P.map(p => {
+    let s = 0, why = [];
+    if (aq.gender==='any') s+=1; else if (p.gender===aq.gender) { s+=3; } else if (p.gender==='uniseks') { s+=2; why.push('uniseks'); } else s-=10;
+    if (p.main===aq.family) { s+=4; why.unshift(famLabel(aq.family).toLowerCase()+' asosli'); } else if (p.fam.includes(aq.family)) { s+=2; why.unshift(famLabel(aq.family).toLowerCase()+' notalar bor'); } else s-=6;
+    if (aq.budget!=='any') { if (p.from <= +aq.budget*1000) s+=2; else s-=10; }
+    if (p.kind==='orig') s+=0.5;
+    return {p, s, why};
+  }).filter(r=>r.s>0).sort((a,b)=>b.s-a.s).slice(0,4);
+  $('#resList').innerHTML = res.length ? res.map(({p,why}) => `
+    <a class="match" href="#atir-${p.id}"><img src="${p.img}" alt="" loading="lazy"${thumb(p)}>
+      <div><b>${esc(p.name)}</b><span>${p.kind==='orig'?'Maleton mualliflik':esc(p.brand)+' ilhomida'}</span><div class="why">${esc(why.join(', '))}</div></div>
+      <span class="price num">${fmt(p.from)}</span></a>`).join('')
+    : `<div class="empty">Bu budjetda mos atir topilmadi. Budjetni oshirib ko'ring yoki boshqa hid oilasini tanlang.</div>`;
+}
+advise();
+
+
+// ---- gifts (narxlar vaqtinchalik)
+const GIFTS = [
+  {id:'namuna', name:"Namuna toʻplami", meta:"3 × 2 ml · oʻzingiz tanlaysiz", pick:3, ml:'2', fixed:(S.gifts&&S.gifts.namuna)||150000, cta:"3 ta atir tanlash",
+   sub:"3 × 2 ml, istalgan atirdan", how:["Mualliflik yoki klassikadan uchta turli atir tanlang.","Har biridan 2 ml keladi, bir necha kun sinab koʻring.","Yoqqanini katta hajmda xarid qiling."],
+   note:"Qaysi uchtasini tanlasangiz ham narx bir xil."},
+  {id:'quti', name:"Maleton qutisi", meta:"Sovgʻa qutisi · 3 × 30 ml", pick:3, ml:'30', cta:"Toʻplam yigʻish",
+   sub:"Uchta 30 ml atir, yashil Maleton qutisida", how:["Uchta atir tanlang, har biri 30 ml.","Atirlarni oltin lentali Maleton qutisiga joylaymiz.","Quti va tabrik kartochkasi bepul."],
+   note:"Narx tanlangan atirlar narxidan iborat, quti bepul."},
+  {id:'juftlik', name:"Juftlik toʻplami", meta:"2 × 50 ml · siz va u uchun", pick:2, ml:'50', cta:"Ikkita atir tanlash",
+   sub:"Ikki kishi uchun ikki atir, bitta qutida", how:["Oʻzingizga va yaqiningizga bittadan atir tanlang.","Ikkalasi 50 ml, bitta qutida keladi.","“Siz va u” yorligʻi bilan qadoqlaymiz."],
+   note:"Narx tanlangan atirlar narxidan iborat, quti bepul."},
+  {id:'sertifikat', name:"Sovgʻa sertifikati", meta:"Istalgan atirga almashtiriladi", cert:true, amounts:(S.gifts&&S.gifts.sertifikat)||[300000,500000,1000000,2000000], cta:"Summani tanlash",
+   sub:"Atirni u oʻzi tanlasin", how:["Summani tanlang va kimga ekanini yozing.","Sertifikatni konvertda yoki Telegram orqali yuboramiz.","Egasi doʻkonda yoki saytda istalgan atirga almashtiradi."]}
+];
+GIFTS.forEach(g => g.img = 'img/gifts/' + g.id + '.webp');
+const gById = Object.fromEntries(GIFTS.map(g=>[g.id,g]));
+const gPriceLabel = g => g.fixed ? fmt(g.fixed) : g.cert ? fmt(g.amounts[0]) + ' dan' : 'Quti bepul';
+const giftCard = g => `<div class="gcard">
+  <a href="#sovga-${g.id}"><img src="${g.img}" alt="${esc(g.name)}" loading="lazy" width="1024" height="1024"></a>
+  <h3><a href="#sovga-${g.id}">${esc(g.name)}</a></h3><div class="meta">${esc(g.meta)}</div>
+  <div class="foot"><span class="price num">${gPriceLabel(g)}</span><a class="btn outline" href="#sovga-${g.id}">${esc(g.cta)}</a></div></div>`;
+$('#giftGrid').innerHTML = GIFTS.map(giftCard).join('');
+$('#giftTeaser').innerHTML = GIFTS.map(giftCard).join('');
+
+const gs = { id:null, picks:[], q:'', showKlas:false, amount:0, to:'', msg:'' };
+function gTotal(g){ return g.fixed || g.picks_total || 0; }
+function renderGift(){
+  const g = gById[gs.id]; if (!g) return;
+  const left = `<div class="media"><div class="pic"><img src="${g.img}" alt="${esc(g.name)}"></div><ol class="howto">${g.how.map(h=>`<li>${esc(h)}</li>`).join('')}</ol></div>`;
+  if (g.cert) {
+    const amt = gs.amount || g.amounts[1];
+    $('#gp').innerHTML = `<div class="gp">${left}<div class="info">
+      <div><div class="eyebrow">Sovg'alar</div><h2 style="margin-top:12px">${esc(g.name)}</h2><div class="sub">${esc(g.sub)}</div></div>
+      <div class="certcard"><div class="t"><img src="img/mark.png" alt=""><span style="font-size:11px;letter-spacing:.2em">SOVG'A SERTIFIKATI</span></div>
+        <div><div class="amt num">${fmt(amt)}</div><div class="to">${gs.to?esc(gs.to)+' uchun':'Maleton parfums'}</div></div></div>
+      <div><h4>Summa</h4><div class="amounts">${g.amounts.map(a=>`<button type="button" data-amt="${a}" aria-pressed="${a===amt}" class="num">${fmt(a).replace(/ soʻm/,'')}</button>`).join('')}</div></div>
+      <div class="field"><label for="gTo">Kimga</label><input id="gTo" value="${esc(gs.to)}" placeholder="Masalan, Madina opa"></div>
+      <div class="field"><label for="gMsg">Tabrik so'zi (ixtiyoriy)</label><textarea id="gMsg" rows="2" placeholder="Tug'ilgan kuningiz bilan!">${esc(gs.msg)}</textarea></div>
+      <div class="gbar"><div><div class="cnt">Sertifikat</div><div class="tot num">${fmt(amt)}</div></div><button class="btn dark" type="button" id="gAdd">Savatga qo'shish</button></div>
+    </div></div>`;
+    return;
+  }
+  const chosen = gs.picks.map(id=>byId[id]);
+  const total = g.fixed || chosen.reduce((a,p)=>a+(p.prices[g.ml]||0),0);
+  const q = gs.q.toLowerCase();
+  const match = p => !q || (p.name+' '+p.brand+' '+p.notes.join(' ')).toLowerCase().includes(q);
+  const avail = p => g.fixed || p.prices[g.ml];
+  const item = p => { const on = gs.picks.includes(p.id); const full = gs.picks.length>=g.pick && !on;
+    return `<button class="pitem" type="button" data-pick="${p.id}" aria-pressed="${on}"${full?' disabled':''}>
+      <img src="${p.img}" alt=""${p.kind==='orig'?' class="c"':''}><div><b>${esc(p.name)}</b><span>${esc(p.notes.slice(0,3).join(' · '))}</span></div>
+      <span class="r num">${g.fixed? g.ml+' ml' : fmt(p.prices[g.ml])}</span></button>`; };
+  const origs = P.filter(p=>p.kind==='orig' && match(p) && avail(p));
+  const klas = KL.filter(p=>match(p) && avail(p));
+  const showK = gs.showKlas || q;
+  $('#gp').innerHTML = `<div class="gp">${left}<div class="info">
+    <div><div class="eyebrow">Sovg'alar</div><h2 style="margin-top:12px">${esc(g.name)}</h2><div class="sub">${esc(g.sub)}</div></div>
+    <div class="bigprice num">${g.fixed?fmt(g.fixed):'Quti bepul'}</div>
+    <div class="notice">${esc(g.note)} Bitta atirni ikki marta tanlab bo'lmaydi. Qaysini tanlashni bilmaysizmi? <a href="#maslahat">Maslahatchidan foydalaning</a>.</div>
+    <div><h4>Siz tanlagan atirlar · <span class="num">${gs.picks.length}/${g.pick}</span></h4><div class="slots">${Array.from({length:g.pick},(_,i)=>{ const p=chosen[i];
+      return p ? `<div class="slot filled"><img src="${p.img}" alt=""><div><b>${esc(p.name)}</b><div style="font-size:12.5px;color:var(--muted)">${g.ml} ml${g.fixed?'':' · '+fmt(p.prices[g.ml])}</div></div><button class="x" type="button" data-unpick="${p.id}" aria-label="${esc(p.name)} ni olib tashlash">×</button></div>`
+               : `<div class="slot"><span class="n">${i+1}</span><span>${i+1}-atir: ro'yxatdan tanlang</span><span></span></div>`; }).join('')}</div></div>
+    <input class="psearch" id="gq" type="search" placeholder="Atir, brend yoki nota bo'yicha qidirish" value="${esc(gs.q)}" autocomplete="off">
+    <div class="plist">
+      ${origs.length?`<h4>Mualliflik kolleksiyasi</h4>${origs.map(item).join('')}`:''}
+      ${showK ? (klas.length?`<h4>Klassika</h4>${klas.map(item).join('')}`:'') : `<button class="btn outline" type="button" id="showKlas" style="align-self:flex-start;margin-top:8px">Klassikani ko'rsatish (${klas.length})</button>`}
+      ${q && !origs.length && !klas.length ? `<div class="empty">Bu so'z bo'yicha atir topilmadi.</div>` : ''}
+    </div>
+    <div class="gbar"><div><div class="cnt num">${gs.picks.length}/${g.pick} tanlandi</div><div class="tot num">${total?fmt(total):'—'}</div></div>
+      <button class="btn dark" type="button" id="gAdd"${gs.picks.length<g.pick?' disabled':''}>${gs.picks.length<g.pick?`Yana ${g.pick-gs.picks.length} ta tanlang`:'Savatga qoʻshish'}</button></div>
+  </div></div>`;
+}
+$('#gp').addEventListener('click', e => {
+  const g = gById[gs.id];
+  const pk = e.target.closest('[data-pick]');
+  if (pk) { const id = pk.dataset.pick; if (gs.picks.includes(id)) gs.picks = gs.picks.filter(x=>x!==id); else if (gs.picks.length < g.pick) gs.picks.push(id); keepScroll(renderGift); return; }
+  const up = e.target.closest('[data-unpick]'); if (up) { gs.picks = gs.picks.filter(x=>x!==up.dataset.unpick); keepScroll(renderGift); return; }
+  if (e.target.closest('#showKlas')) { gs.showKlas = true; keepScroll(renderGift); return; }
+  const am = e.target.closest('[data-amt]'); if (am) { gs.amount = +am.dataset.amt; keepScroll(renderGift); return; }
+  if (e.target.closest('#gAdd')) {
+    if (g.cert) { const amt = gs.amount || g.amounts[1];
+      addKit({kit:g.id, title:g.name, img:g.img, price:amt, qty:1, sub:fmt(amt) + (gs.to?', '+gs.to:'') + (gs.msg?' · "'+gs.msg+'"':'')});
+    } else { if (gs.picks.length < g.pick) return;
+      const total = g.fixed || gs.picks.reduce((a,id)=>a+(byId[id].prices[g.ml]||0),0);
+      addKit({kit:g.id, title:g.name, img:g.img, price:total, qty:1, picks:[...gs.picks], sub: gs.picks.map(id=>byId[id].name).join(', ') + ' · ' + g.ml + ' ml'});
+      gs.picks = []; renderGift(); }
+    toast(`${g.name} savatga qo'shildi`);
+  }
+});
+$('#gp').addEventListener('input', e => {
+  if (e.target.id==='gq') { gs.q = e.target.value; const pos = e.target.selectionStart; renderGift(); const el=$('#gq'); el.focus(); try{ el.setSelectionRange(pos,pos); }catch(_){} }
+  if (e.target.id==='gTo') { gs.to = e.target.value.slice(0,40); const t=document.querySelector('.certcard .to'); if(t) t.textContent = gs.to? gs.to+' uchun' : 'Maleton parfums'; }
+  if (e.target.id==='gMsg') gs.msg = e.target.value.slice(0,140);
+});
+function keepScroll(fn){ const y = window.scrollY; fn(); window.scrollTo(0, y); }
+
+// ---- product sheet
+let cur = null, curSize = '20', curQty = 1, curBottle = 'standart', lastSection = '#klassika';
+function similar(p){
+  return P.filter(x => x.id!==p.id && x.fam.some(f=>p.fam.includes(f)))
+    .map(x => ({x, s: x.fam.filter(f=>p.fam.includes(f)).length + (x.main===p.main?2:0) + (x.gender===p.gender?1:0)}))
+    .sort((a,b)=>b.s-a.s).slice(0,4).map(r=>r.x);
+}
+function renderPD(){
+  const p = cur; if(!p) return;
+  if (bById[curBottle] && +curSize < (bById[curBottle].min||0)) curBottle = 'standart';
+  const price = p.prices[curSize] + bPrice(curBottle, curSize);
+  const meta = [['Kim uchun', gLabel(p.gender)], ['Hid oilasi', p.fam.map(famLabel).join(', ')], ['Davlat', p.country], ['Parfyumer', p.perfumer], ['Yil', p.year]].filter(r=>r[1]);
+  $('#pd').innerHTML = `<div class="pd">
+    <div class="media${p.kind==='orig'?'':' poster'}">${p.kind==='orig' ? stage(p,true) : `<img src="${p.img}" alt="${esc(p.name)}">`}</div>
+    <div class="info">
+      <div>
+        <div class="eyebrow">${p.kind==='orig'?'Maleton Originals · Extrait de Parfum':esc(p.brand)+' ilhomida · Klassika'}</div>
+        <h2 style="margin-top:8px">${esc(p.name)}</h2>
+        <div class="sub">${esc(gLabel(p.gender))}${p.main?' · '+esc(famLabel(p.main)):''}</div>
+      </div>
+      <div>
+        <h4>Hajmni tanlang</h4>
+        <div class="sizes">${SIZES.filter(s=>p.prices[s]).map(s=>`<button class="size" type="button" data-s="${s}" aria-pressed="${s===curSize}"><b class="num">${s} ml</b><span class="num">${fmt(p.prices[s]).replace(' soʻm','')}</span></button>`).join('')}</div>
+      </div>
+      ${BOTTLES.length>1 ? `<div><h4>Idish</h4><div class="bottles">${BOTTLES.map(b=>{ const off = +curSize < (b.min||0);
+        return `<button class="bottle-opt" type="button" data-b="${b.id}" aria-pressed="${b.id===curBottle}"${off?' disabled':''}><b>${esc(b.name)}</b><span>${off?b.min+' ml dan boshlab':esc(b.note)}</span><i class="num">${b.price?'+'+fmt(b.price):'Bepul'}</i></button>`; }).join('')}</div></div>` : ''}
+      <div class="buy">
+        <div class="grow"><div class="total num">${fmt(price*curQty)}</div><div class="perml num">1 ml = ${fmt(p.prices[curSize]/(+curSize))}${curSize==='100'?' · eng foydali':''}</div></div>
+        <div class="qty"><button type="button" data-q="-1" aria-label="Kamaytirish">−</button><span class="num">${curQty}</span><button type="button" data-q="1" aria-label="Ko'paytirish">+</button></div>
+        <button class="btn dark" type="button" id="addCart">Savatga qo'shish</button>
+      </div>
+      <ul class="perks">
+        <li>Butun O'zbekiston bo'ylab yetkazamiz, Toshkentda kuryer orqali.</li>
+        <li>O'z flakoningiz bo'lsa, refil xizmati bilan to'ldirib beramiz.</li>
+      </ul>
+      ${p.ing ? `<div><h4>Tarkibi</h4><div class="ingchips">${p.notes.map((n,i)=>`<div><img src="${ING(p.ing[i])}" alt="" loading="lazy">${esc(n)}</div>`).join('')}</div></div>`
+        : p.notes&&p.notes.length?`<div><h4>Notalar va akkordlar</h4><div class="noteschips">${p.notes.map(n=>`<span>${esc(n)}</span>`).join('')}</div></div>`:''}
+      ${p.desc?`<div><h4>Tavsif</h4><p style="margin:0">${esc(p.desc)}</p></div>`:''}
+      <div><h4>Tafsilotlar</h4><dl class="meta">${meta.map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join('')}</dl></div>
+      <div><h4>Shunga o'xshash hidlar</h4><div class="similar">${similar(p).map(x=>`<a href="#atir-${x.id}"><img src="${x.img}" alt="" loading="lazy"${thumb(x)}><b>${esc(x.name)}</b><span class="num" style="color:var(--muted)">${fmt(x.from)}</span></a>`).join('')}</div></div>
+    </div></div>`;
+}
+$('#pd').addEventListener('click', e => {
+  const s = e.target.closest('.size'); if (s) { curSize = s.dataset.s; renderPD(); return; }
+  const bo = e.target.closest('[data-b]'); if (bo) { curBottle = bo.dataset.b; renderPD(); return; }
+  const q = e.target.closest('[data-q]'); if (q) { curQty = Math.max(1, Math.min(20, curQty + (+q.dataset.q))); renderPD(); return; }
+  if (e.target.closest('#addCart')) { addToCart(cur.id, curSize, curQty, curBottle); toast(`${cur.name}, ${curSize} ml savatga qo'shildi`); }
+});
+function showProduct(id){
+  const p = byId[id]; if(!p) { location.hash = 'klassika'; return; }
+  if (cur !== p) { curSize = p.prices['20'] ? '20' : SIZES.find(s=>p.prices[s]); curQty = 1; curBottle = 'standart'; }
+  cur = p; renderPD();
+  const sec = p.kind==='orig' ? ['mualliflik','Mualliflik kolleksiyasi'] : ['klassika','Klassika'];
+  $('#crumbs').innerHTML = `<a href="#bosh">Bosh sahifa</a><span>/</span><a href="#${sec[0]}">${sec[1]}</a><span>/</span><span>${esc(p.name)}</span>`;
+  document.title = p.name + ' · Maleton Parfum';
+  window.scrollTo(0, 0);
+}
+
+// ---- routing (plain #name only): #atir-<id> is a perfume page, anything else is the home page
+const VIEWS = ['bosh','atirPage','giftsPage','giftPage'];
+function showView(v){ VIEWS.forEach(x => $('#'+x).hidden = x!==v); }
+function route(){
+  const h = location.hash.slice(1);
+  if ($('#cart').classList.contains('on')) closeCart();
+  if (h.startsWith('atir-')) { showView('atirPage'); showProduct(h.slice(5)); return; }
+  if (h === 'sovgalar') { showView('giftsPage'); document.title = "Sovg\u02bbalar · Maleton Parfum"; window.scrollTo(0,0); return; }
+  if (h.startsWith('sovga-') && gById[h.slice(6)]) {
+    const id = h.slice(6); if (gs.id !== id) { gs.id = id; gs.picks = []; gs.q = ''; gs.showKlas = false; gs.amount = 0; }
+    $('#gcrumbs').innerHTML = `<a href="#bosh">Bosh sahifa</a><span>/</span><a href="#sovgalar">Sovg'alar</a><span>/</span><span>${esc(gById[id].name)}</span>`;
+    renderGift(); showView('giftPage'); document.title = gById[id].name + ' · Maleton Parfum'; window.scrollTo(0,0); return;
+  }
+  const wasOther = $('#bosh').hidden;
+  showView('bosh'); document.title = 'Maleton Parfum';
+  if (h) lastSection = '#'+h;
+  if (wasOther) { const t = h && document.getElementById(h); if (t) t.scrollIntoView(); else window.scrollTo(0,0); }
+}
+window.addEventListener('hashchange', route);
+
+// ---- cart
+document.addEventListener('click', e => { const b = e.target.closest('[data-add]'); if (!b) return; e.preventDefault(); const p = byId[b.dataset.add]; const ml = p.prices['20'] ? '20' : SIZES.find(s=>p.prices[s]); addToCart(p.id, ml, 1); toast(`${p.name}, ${ml} ml savatga qo'shildi`); });
+const TG = window.Telegram && window.Telegram.WebApp;
+const TG_INIT = TG && TG.initData ? TG.initData : '';
+if (TG) { try { TG.ready(); TG.expand(); } catch(e){} }
+let cart = store.get('maleton_cart', []);
+const ship = { mode:'city', region:'' };
+let ordered = null;
+function saveCart(){ store.set('maleton_cart', cart); const n = cart.reduce((a,l)=>a+l.qty,0); ['#cartCount','#cartCount2'].forEach(s=>{ const b=$(s); b.textContent=n; b.dataset.n=n; }); }
+function addToCart(id, ml, qty, b){ b = b || 'standart'; const l = cart.find(x=>!x.kit && x.id===id && x.ml===ml && (x.b||'standart')===b); if (l) l.qty = Math.min(20, l.qty+qty); else cart.push({id, ml, qty, b}); saveCart(); if($('#cart').classList.contains('on')) renderCart(); }
+const lineTotal = l => l.kit ? l.price * l.qty : ((byId[l.id]?.prices[l.ml]||0) + bPrice(l.b, l.ml)) * l.qty;
+const bLabel = l => l.b && l.b!=='standart' && bById[l.b] ? ' · ' + bById[l.b].name : '';
+function addKit(line){ cart.push(line); saveCart(); if($('#cart').classList.contains('on')) renderCart(); }
+const lineName = l => l.kit ? l.title : (byId[l.id]||{}).name;
+function renderCart(){ keepForm(); drawCart(); restoreForm(); }
+function drawCart(){
+  const body = $('#cartBody'), sum = $('#cartSum');
+  if (ordered) {
+    body.innerHTML = `<div class="done"><div class="ok">Buyurtma qabul qilindi</div>
+      <p style="margin:0">Raqami <b class="num">${ordered.no}</b>. ${ordered.sent ? "Buyurtmangiz sotuvchiga yetib bordi. Tez orada siz bilan bog'lanamiz." : "Bu demo sahifa: haqiqiy saytda buyurtma shu zahoti Maleton Telegram botiga tushadi."}</p>
+      <pre id="orderText">${esc(ordered.text)}</pre>
+      <div class="btns"><button class="btn outline" type="button" id="copyOrder">Matnni nusxalash</button><a class="btn dark" href="https://t.me/maletonparfum" target="_blank" rel="noopener">Telegramda yozish</a></div></div>`;
+    sum.innerHTML = `<button class="btn gold" type="button" id="newOrder">Xaridni davom ettirish</button>`;
+    return;
+  }
+  cart = cart.filter(l => l.kit || (byId[l.id] && byId[l.id].prices[l.ml]));
+  if (!cart.length) {
+    const last = store.get('maleton_last', null);
+    body.innerHTML = `<div class="empty">Savat bo'sh. Katalogdan atir tanlang yoki maslahatchidan foydalaning.</div>
+      ${last && last.items && last.items.length ? `<div class="cbox"><div class="eyebrow">Oldingi buyurtmangiz</div><p>${last.items.map(l=>esc(lineName(l))+(l.kit?'':', '+l.ml+' ml')+' × '+l.qty).join('<br>')}</p><button class="btn dark" type="button" id="reorder" style="align-self:flex-start">Bir bosishda takrorlash</button></div>` : ''}
+      <a class="btn outline" href="#klassika" id="toCatalog">Katalogga o'tish</a>`;
+    sum.innerHTML = '';
+    return;
+  }
+  const sub = cart.reduce((a,l)=>a+lineTotal(l),0);
+  const del = DELIVERY[ship.mode].price;
+  body.innerHTML = cart.map((l,i) => { const p = l.kit ? {img:l.img, name:l.title} : byId[l.id]; return `<div class="line">
+      <img src="${p.img}" alt=""${l.kit?'':thumb(p)}>
+      <div><b>${esc(p.name)}</b><div class="s">${l.kit ? esc(l.sub) : l.ml+' ml · '+(p.kind==='orig'?'Maleton':esc(p.brand))+esc(bLabel(l))}</div>
+        <div class="qty" style="margin-top:6px"><button type="button" data-i="${i}" data-d="-1" aria-label="Kamaytirish">−</button><span class="num">${l.qty}</span><button type="button" data-i="${i}" data-d="1" aria-label="Ko'paytirish">+</button></div></div>
+      <div class="r"><b class="num">${fmt(lineTotal(l))}</b><button class="rm" type="button" data-rm="${i}">O'chirish</button></div></div>`; }).join('') + `
+    <form class="form" id="orderForm" novalidate>
+      <div class="field"><label for="fName">Ismingiz</label><input id="fName" autocomplete="name" placeholder="Masalan, Dilshod"><span class="err" id="eName"></span></div>
+      <div class="field"><label for="fPhone">Telefon</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67"><span class="err" id="ePhone"></span></div>
+      <div class="field"><label>Qabul qilish</label><div class="seg">${Object.entries(DELIVERY).map(([k,d])=>`<button type="button" data-ship="${k}" aria-pressed="${ship.mode===k}">${d.label}</button>`).join('')}</div></div>
+      ${ship.mode==='region'?`<div class="field"><label for="fRegion">Viloyat</label><select id="fRegion"><option value="">Tanlang</option>${REGIONS.map(r=>`<option${ship.region===r?' selected':''}>${r}</option>`).join('')}</select><span class="err" id="eRegion"></span></div>`:''}
+      ${ship.mode!=='pickup'?`<div class="field"><label for="fAddr">Manzil yoki BTS punkti</label><input id="fAddr" autocomplete="street-address" placeholder="Ko'cha, uy yoki BTS filiali"></div>`:''}
+      <div class="field"><label for="fNote">Izoh (ixtiyoriy)</label><textarea id="fNote" rows="2" placeholder="Sovg'a uchun qadoqlang, va hokazo"></textarea></div>
+    </form>`;
+  sum.innerHTML = `
+    <div class="r"><span>Mahsulotlar</span><span>${fmt(sub)}</span></div>
+    <div class="r"><span>Yetkazish</span><span>${del?fmt(del):'Bepul'}</span></div>
+    <div class="r t"><span>Jami</span><span>${fmt(sub+del)}</span></div>
+    <button class="btn gold" type="submit" form="orderForm" style="margin-top:8px">Buyurtma berish</button>
+    <span class="hint">To'lov: Click, Payme yoki naqd. Yetkazish narxlari vaqtinchalik.</span>`;
+}
+$('#cartBody').addEventListener('click', e => {
+  const d = e.target.closest('[data-d]'); if (d) { const l=cart[+d.dataset.i]; l.qty=Math.max(1,Math.min(20,l.qty+(+d.dataset.d))); saveCart(); renderCart(); return; }
+  const r = e.target.closest('[data-rm]'); if (r) { cart.splice(+r.dataset.rm,1); saveCart(); renderCart(); return; }
+  const sh = e.target.closest('[data-ship]'); if (sh) { ship.mode = sh.dataset.ship; renderCart(); return; }
+  if (e.target.closest('#reorder')) { const last=store.get('maleton_last',null); if(last){ last.items.forEach(l=> l.kit ? cart.push({...l}) : addToCart(l.id,l.ml,l.qty,l.b)); saveCart(); renderCart(); toast('Oldingi buyurtma savatga qoʻshildi'); } return; }
+  if (e.target.closest('#copyOrder')) { copyText(ordered.text, e.target.closest('#copyOrder')); return; }
+  if (e.target.closest('#toCatalog')) { closeCart(); }
+});
+$('#cartSum').addEventListener('click', e => { if (e.target.closest('#newOrder')) { ordered=null; closeCart(); } });
+$('#cartBody').addEventListener('change', e => { if (e.target.id==='fRegion') ship.region = e.target.value; });
+let formMem = {};
+try { const u = TG && TG.initDataUnsafe && TG.initDataUnsafe.user; if (u && u.first_name) formMem.fName = u.first_name; } catch(e){}
+function keepForm(){ ['fName','fPhone','fAddr','fNote'].forEach(id=>{ const el=document.getElementById(id); if(el) formMem[id]=el.value; }); }
+function restoreForm(){ Object.entries(formMem).forEach(([id,v])=>{ const el=document.getElementById(id); if(el) el.value=v; }); }
+$('#cartBody').addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = $('#fName').value.trim(), phoneRaw = $('#fPhone').value.replace(/\D/g,'');
+  const digits = phoneRaw.startsWith('998') ? phoneRaw : '998' + phoneRaw;
+  let ok = true;
+  $('#eName').textContent = name.length < 2 ? 'Ismingizni yozing.' : ''; if (name.length < 2) ok = false;
+  const phoneOk = digits.length === 12;
+  $('#ePhone').textContent = phoneOk ? '' : "Raqamni to'liq yozing: +998 va 9 ta raqam."; if (!phoneOk) ok = false;
+  if (ship.mode==='region' && !ship.region) { $('#eRegion').textContent = 'Viloyatni tanlang.'; ok = false; }
+  if (!ok) return;
+  const phone = '+' + digits.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+  const sub = cart.reduce((a,l)=>a+lineTotal(l),0), del = DELIVERY[ship.mode].price;
+  let no = 'MT-' + String(Date.now()).slice(-5);
+  const addr = $('#fAddr') ? $('#fAddr').value.trim() : '';
+  const note = $('#fNote').value.trim();
+  const text = [`Buyurtma ${no}`, `Mijoz: ${name}, ${phone}`, ...cart.map(l=> l.kit ? `• ${l.title} (${l.sub}) × ${l.qty} = ${fmt(lineTotal(l))}` : `• ${byId[l.id].name} ${l.ml} ml${bLabel(l)} × ${l.qty} = ${fmt(lineTotal(l))}`),
+    `Qabul: ${DELIVERY[ship.mode].label}${ship.mode==='region'?' ('+ship.region+')':''}${addr?', '+addr:''}`, `Jami: ${fmt(sub+del)}`, note?`Izoh: ${note}`:''].filter(Boolean).join('\n');
+  const payload = { name, phone, ship:{mode:ship.mode, region:ship.region, addr}, note, tg: TG_INIT,
+    items: cart.map(l => l.kit ? {kit:l.kit, picks:l.picks||[], amount:l.price, qty:l.qty, sub:l.sub} : {id:l.id, ml:l.ml, qty:l.qty, b:l.b||'standart'}) };
+  let sent = false, textOut = text;
+  $('#cartSum').classList.add('sending');
+  try {
+    const r = await fetch('api/order', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    if (r.ok) { const j = await r.json(); if (j && j.no) { sent = true; no = j.no; textOut = j.text || text.replace(/^Buyurtma \S+/, 'Buyurtma ' + no); } }
+    else if (r.status === 400) { const j = await r.json().catch(()=>null); $('#cartSum').classList.remove('sending'); toast((j && j.error) || "Buyurtmada xato bor, qayta urinib ko'ring"); return; }
+  } catch (err) { /* server yo'q: demo rejimi */ }
+  $('#cartSum').classList.remove('sending');
+  store.set('maleton_last', {items: cart.map(l=>({...l}))});
+  ordered = {no, text:textOut, sent}; cart = []; saveCart(); formMem = {}; drawCart();
+});
+function openCart(){ renderCart(); $('#cart').classList.add('on'); $('#scrim').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeCart(){ keepForm(); $('#cart').classList.remove('on'); $('#scrim').classList.remove('on'); document.body.style.overflow=''; }
+$('#openCart').onclick = openCart; $('#openCart2').onclick = openCart; $('#closeCart').onclick = closeCart;
+$('#scrim').onclick = closeCart;
+document.addEventListener('keydown', e => { if (e.key==='Escape' && $('#cart').classList.contains('on')) closeCart(); });
+document.querySelectorAll('[data-copy]').forEach(b => b.onclick = () => copyText(b.dataset.copy, b));
+
+saveCart();
+route();
+})();
+</script>

@@ -1,0 +1,25 @@
+# Maxfiy: parol, bot tokeni, buyurtmalar va mijozlar bazasi
+server/.env
+server/data/
+
+# Mijozning ichki hujjatlari va xom materiallar (ommaviy repoga chiqmaydi)
+Atir_dokoni_IT_taklif.pdf
+ChatExport_*/
+brevan*.png
+logo.jpg
+idishlar/
+tarkib/
+sovgalar/
+
+# Reels'ning siqilmagan asl nusxalari va takror nusxalar
+sayt/img/reels/web/
+sayt/img/reels/*.MOV
+sayt/img/reels/*.MP4
+sayt/img/reels/*.mp4
+!sayt/img/reels/yigitali.mp4
+!sayt/img/reels/doniyor.mp4
+!sayt/img/reels/islom.mp4
+!sayt/img/reels/shaxzod.mp4
+
+__pycache__/
+*.pyc
